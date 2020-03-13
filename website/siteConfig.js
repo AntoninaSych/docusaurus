@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
+  title: 'ConcordPayDocs', // Title for your website.
   tagline: 'A website for testing',
   url: 'AntoninaSych.github.io', // Your website URL
   baseUrl: '/docusaurus/', // Base URL for your project */
