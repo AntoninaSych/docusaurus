@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>ConcordPayDocs Blog</title>
+        <title> Blog</title>
         <link>AntoninaSych.github.io/docusaurus/blog</link>
-        <description>The best place to stay up-to-date with the latest ConcordPayDocs news and events.</description>
+        <description>The best place to stay up-to-date with the latest  news and events.</description>
         <lastBuildDate>Tue, 24 Oct 2017 06:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
-            <title>ConcordPayDocs Blog</title>
-            <url>AntoninaSych.github.io/docusaurus/img/favicon.ico</url>
+            <title> Blog</title>
+            <url>AntoninaSych.github.io/docusaurus/img/concord-logo.png</url>
             <link>AntoninaSych.github.io/docusaurus/blog</link>
         </image>
         <copyright>Copyright © 2020 Your Name or Your Company Name</copyright>

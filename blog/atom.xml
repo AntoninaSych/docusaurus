@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>AntoninaSych.github.io/docusaurus/blog</id>
-    <title>ConcordPayDocs Blog</title>
+    <title> Blog</title>
     <updated>2017-10-24T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="AntoninaSych.github.io/docusaurus/blog"/>
-    <subtitle>The best place to stay up-to-date with the latest ConcordPayDocs news and events.</subtitle>
-    <logo>AntoninaSych.github.io/docusaurus/img/favicon.ico</logo>
+    <subtitle>The best place to stay up-to-date with the latest  news and events.</subtitle>
+    <logo>AntoninaSych.github.io/docusaurus/img/concord-logo.png</logo>
     <rights>Copyright © 2020 Your Name or Your Company Name</rights>
     <entry>
         <title type="html"><![CDATA[New Version 1.0.0]]></title>
