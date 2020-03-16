@@ -1,6 +1,6 @@
 ---
 id: doc9
-title: Developers
+title: Разработчикам
 ---
 
 I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

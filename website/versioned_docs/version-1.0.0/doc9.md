@@ -1,13 +1,123 @@
 ---
-id: doc9
-title: Developers
+id: version-1.0.0-doc9
+title: Оплата на платежной странице процессинга
+original_id: doc9
 ---
 
 I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
 
-##  Оплата на платежной странице процессинга
+## Markdown Syntax
 
+a lot of text1
+
+## Markdown Syntax1
+a lot of text2
+## Markdown Syntax2
+
+**Bold** _italic_ `code` [Links](#url)
+http://localhost:3001/docusaurus/hello-world
+
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
+
+* Hey
+* Ho
+* Let's Go
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+
+```js
+console.log('Hello, world!');
+```
+<!--Python-->
+
+```py
+print('Hello, world!')
+```
+
+<!--C-->
+
+```C
+#include <stdio.h>
+
+int main() {
+   printf("Hello World!");
+   return 0;
+}
+```
+
+<!--Pascal-->
+
+```Pascal
+program HelloWorld;
+begin
+  WriteLn('Hello, world!');
+end.
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+ <h1>Оплата на платежной странице процессинга</h1> 
  
+ Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
+ 
+Production url:   https://pay.concord.ua/api/
+ 
+
+ | 1  |2   |  3 |  4 |5   |
+ |---|---|---|---|---|
+ | 11   |22   | 33  | 44  |  55 |
+ | 11    |22   | 33  | 44  |  55 |
+ |   |   |   |   |   |
+
+ ////
+  Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.
+  
+  
+  Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.        1
+  
+  Оплата на платежной странице процессинга        2
+  
+  Callback вызов для отправки уведомления о статусе платежа        3
+  
+  Операция покупки через Apple Pay        4
+  
+  Валидация мерчанта Apple Pay (api/apple/validate).        5
+  
+  Подтверждение платежа Apple Pay (api/apple/payment)        6
+  
+  Рекуррентные платежи RecPayment(оплата по токену)        7
+  
+  Операция Verify        8
+  
+  Операция Reversal        9
+  
+  Операция Check        10
+  
+  Операция P2PCredit        11
+  
+  Операция получения баланса (GetBalance)        12
+  
+  Операция P2PDebit        13
+  
+  Операция PurchaseOnMerchant        14
+  
+  Подтверждение 3DS верификации        17
+  
+  Оплата на платежной странице процессинга с расщеплением платежа        18
+  
+  Справочник.  Статусы платежа        20
+  
+  Справочник. Коды ответов        20
+  
+  Справочник. Коды системных ошибок        25
+  
+  
+  
+  
+  
+  Оплата на платежной странице процессинга
   
   Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
   
@@ -217,9 +327,11 @@ I can write content using [GitHub-flavored Markdown syntax](https://github.githu
   
   Порядок параметров при конкатенации важен!
   
-
-## Операция покупки через Apple Pay
- 
+  
+  
+  
+  Операция покупки через Apple Pay
+  
   Для  интеграции кнопки  Apple Pay  на платежную страницу интернет магазина необходимо реализовать метод ApplePaySession.canMakePaymentsWithActiveCard, этот метод определяет поддерживает ли данное устройство оплату с помощью Apple Pay.
   
   
@@ -362,9 +474,12 @@ I can write content using [GitHub-flavored Markdown syntax](https://github.githu
   message
   
   Расшифровка кода ответа
-##   Подтверждение платежа Apple Pay (api/apple/payment)
-
-Production url:   https://pay.concord.ua/api/apple/payment
+  
+  
+  
+  Подтверждение платежа Apple Pay (api/apple/payment)
+  
+  Production url:   https://pay.concord.ua/api/apple/payment
   
   
   

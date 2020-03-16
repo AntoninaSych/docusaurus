@@ -1,13 +1,57 @@
 ---
-id: doc9
-title: Developers
+id: version-1.0.1-doc9
+title: Оплата на платежной странице процессинга
+original_id: doc9
 ---
-
-I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
-
-##  Оплата на платежной странице процессинга
-
  
+ 
+ ////
+  Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.
+  
+  
+  Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.        1
+  
+  Оплата на платежной странице процессинга        2
+  
+  Callback вызов для отправки уведомления о статусе платежа        3
+  
+  Операция покупки через Apple Pay        4
+  
+  Валидация мерчанта Apple Pay (api/apple/validate).        5
+  
+  Подтверждение платежа Apple Pay (api/apple/payment)        6
+  
+  Рекуррентные платежи RecPayment(оплата по токену)        7
+  
+  Операция Verify        8
+  
+  Операция Reversal        9
+  
+  Операция Check        10
+  
+  Операция P2PCredit        11
+  
+  Операция получения баланса (GetBalance)        12
+  
+  Операция P2PDebit        13
+  
+  Операция PurchaseOnMerchant        14
+  
+  Подтверждение 3DS верификации        17
+  
+  Оплата на платежной странице процессинга с расщеплением платежа        18
+  
+  Справочник.  Статусы платежа        20
+  
+  Справочник. Коды ответов        20
+  
+  Справочник. Коды системных ошибок        25
+  
+  
+  
+  
+  
+  Оплата на платежной странице процессинга
   
   Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
   
@@ -217,9 +261,11 @@ I can write content using [GitHub-flavored Markdown syntax](https://github.githu
   
   Порядок параметров при конкатенации важен!
   
-
-## Операция покупки через Apple Pay
- 
+  
+  
+  
+  Операция покупки через Apple Pay
+  
   Для  интеграции кнопки  Apple Pay  на платежную страницу интернет магазина необходимо реализовать метод ApplePaySession.canMakePaymentsWithActiveCard, этот метод определяет поддерживает ли данное устройство оплату с помощью Apple Pay.
   
   
@@ -362,9 +408,12 @@ I can write content using [GitHub-flavored Markdown syntax](https://github.githu
   message
   
   Расшифровка кода ответа
-##   Подтверждение платежа Apple Pay (api/apple/payment)
-
-Production url:   https://pay.concord.ua/api/apple/payment
+  
+  
+  
+  Подтверждение платежа Apple Pay (api/apple/payment)
+  
+  Production url:   https://pay.concord.ua/api/apple/payment
   
   
   

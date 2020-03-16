@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'ConcordPayDocs', // Title for your website.
+  title: '', // Title for your website.
   tagline: 'A website for testing',
   url: 'AntoninaSych.github.io', // Your website URL
   baseUrl: '/docusaurus/', // Base URL for your project */
@@ -48,14 +48,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/concord-logo.png',
+  footerIcon: 'img/concord-logo.png',
+  favicon: 'img/concord-logo.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#98265e',
-    secondaryColor: '#6a1a41',
+    primaryColor: '#162498',
+    secondaryColor: '#0f6a32',
   },
 
   /* Custom fonts for website */
@@ -73,7 +73,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} ConcordPay`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -90,8 +90,7 @@ const siteConfig = {
 
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
-  twitterImage: 'img/undraw_tweetstorm.svg',
-
+  twitterImage: 'img/undraw_tweetstorm.svg'
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
   // docsSideNavCollapsible: true,

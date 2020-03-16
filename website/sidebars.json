@@ -1,10 +1,10 @@
 {
   "docs": {
-    "Docusaurus": ["doc1","doc9"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Разработчикам": ["doc1","doc9","/docusaurus/hello-world"],
+    "Фін. організаціям": ["doc2"],
+    "Контакти": ["doc3"]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "ConcordPay": {
+    "Вход": ["doc4", "doc5"]
   }
 }
