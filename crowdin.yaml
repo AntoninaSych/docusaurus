@@ -1,5 +1,5 @@
-project_identifier_env: CROWDIN_DOCUSAURUS_PROJECT_ID
-api_key_env: CROWDIN_DOCUSAURUS_API_KEY
+project_identifier_env: concordpay
+api_key_env: 1a245e4abeb83caa2c6a519ced1d72c3
 base_path: "./"
 preserve_hierarchy: true
 

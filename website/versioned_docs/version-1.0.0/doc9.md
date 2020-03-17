@@ -50,7 +50,7 @@ int main() {
 <!--Pascal-->
 
 ```Pascal
-program HelloWorld;
+program Contacts;
 begin
   WriteLn('Hello, world!');
 end.

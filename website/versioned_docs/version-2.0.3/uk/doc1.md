@@ -1,7 +1,8 @@
 ---
-id: doc1
+id: version-2.0.3-doc1
 title: Latin-ish
 sidebar_label: Укр док 1
+original_id: doc1
 ---
 
 Check1 the [documentation](https://docusaurus.io) for how to use Docusaurus.

@@ -5,7 +5,7 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-function HelloWorld(props) {
+function Contacts(props) {
     return (
         <div className="docMainWrapper wrapper">
         <Container className="mainContainer documentContainer postContainer">
@@ -17,4 +17,4 @@ function HelloWorld(props) {
 );
 }
 
-module.exports = HelloWorld;
+module.exports = Contacts;

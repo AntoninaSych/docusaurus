@@ -1,10 +1,10 @@
 {
   "docs": {
-    "Разработчикам": ["doc1","doc9","/docusaurus/hello-world"],
-    "Фін. організаціям": ["doc2"],
-    "Контакти": ["doc3"]
+    "Developers": ["doc1","doc9","/docusaurus/hello-world"],
+    "Fin organizations": ["doc2"],
+    "Contacts": ["doc3"]
   },
   "ConcordPay": {
-    "Вход": ["doc4", "doc5"]
+    "Entrance": ["doc4", "doc5"]
   }
 }
