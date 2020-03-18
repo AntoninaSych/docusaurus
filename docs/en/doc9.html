@@ -1,72 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Разработчикам · </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/)."/><meta name="docsearch:version" content="2.0.4"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Разработчикам · "/><meta property="og:type" content="website"/><meta property="og:url" content="AntoninaSych.github.io/docusaurus/"/><meta property="og:description" content="I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/)."/><meta property="og:image" content="AntoninaSych.github.io/docusaurus/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="AntoninaSych.github.io/docusaurus/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docusaurus/img/concord-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="AntoninaSych.github.io/docusaurus/blog/atom.xml" title=" Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="AntoninaSych.github.io/docusaurus/blog/feed.xml" title=" Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/docusaurus/js/scrollSpy.js"></script><link rel="stylesheet" href="/docusaurus/css/main.css"/><script src="/docusaurus/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docusaurus/en"><img class="logo" src="/docusaurus/img/concord-logo.png" alt=""/><h2 class="headerTitleWithLogo"></h2></a><a href="/docusaurus/en/versions"><h3>2.0.4</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docusaurus/en/contacts" target="_self">Contacts</a></li><li class=""><a href="/docusaurus/en/help" target="_self">Help</a></li><li class=""><a href="/docusaurus/blog/" target="_self">Api</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docusaurus/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docusaurus/docs/ru/doc9">Русский</a></li><li><a href="/docusaurus/docs/uk/doc9">Українська</a></li></ul></div></li><script>
-        const languagesMenuItem = document.getElementById("languages-menu");
-        const languagesDropDown = document.getElementById("languages-dropdown");
-        languagesMenuItem.addEventListener("click", function(event) {
-          event.preventDefault();
-
-          if (languagesDropDown.className == "hide") {
-            languagesDropDown.className = "visible";
-          } else {
-            languagesDropDown.className = "hide";
-          }
-        });
-      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Developers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Developers</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docusaurus/docs/en/doc1">Example Page</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docusaurus/docs/en/doc9">Разработчикам</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Fin organizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docusaurus/docs/en/doc2">Фінансовим компаніям</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contacts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docusaurus/docs/en/doc3">Контакти</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
-
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
-
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Разработчикам</h1></header><article><div><span><p>I can write content using <a href="https://github.github.com/gfm/">GitHub-flavored Markdown syntax</a>.</p>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Developers · </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Developers · "/><meta property="og:type" content="website"/><meta property="og:url" content="AntoninaSych.github.io/docusaurus/"/><meta property="og:description" content="I can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/)."/><meta property="og:image" content="AntoninaSych.github.io/docusaurus/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="AntoninaSych.github.io/docusaurus/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docusaurus/img/concord-logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/website/static/js/main.js"></script><script src="/docusaurus/js/scrollSpy.js"></script><link rel="stylesheet" href="/docusaurus/css/prism.css"/><link rel="stylesheet" href="/docusaurus/css/main.css"/><script src="/docusaurus/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docusaurus/en"><img class="logo" src="/docusaurus/img/concord-logo.png" alt=""/><h2 class="headerTitleWithLogo"></h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docusaurus/en/en" target="_self">EN</a></li><li class=""><a href="/docusaurus/en/ua" target="_self">UK</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Developers</h1></header><article><div><span><p>I can write content using <a href="https://github.github.com/gfm/">GitHub-flavored Markdown syntax</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="оплата-на-платежной-странице-процессинга"></a><a href="#оплата-на-платежной-странице-процессинга" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Оплата на платежной странице процессинга</h2>
 <p>Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.</p>
 <p>Production url:   <a href="https://pay.concord.ua/api/">https://pay.concord.ua/api/</a></p>
@@ -1176,4 +1108,4 @@ Production url:  <a href="https://pay.concord.ua/api/mptoken">https://pay.concor
 <p>-999</p>
 <p>Системная ошибка</p>
 <p>Wrong customer information for payment</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docusaurus/docs/en/doc1"><span class="arrow-prev">← </span><span>Example Page</span></a><a class="docs-next button" href="/docusaurus/hello-world"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#оплата-на-платежной-странице-процессинга">Оплата на платежной странице процессинга</a></li><li><a href="#операция-покупки-через-apple-pay">Операция покупки через Apple Pay</a></li><li><a href="#подтверждение-платежа-apple-pay-apiapplepayment">Подтверждение платежа Apple Pay (api/apple/payment)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docusaurus/" class="nav-home"><img src="/docusaurus/img/concord-logo.png" alt="" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docusaurus/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docusaurus/docs/en/doc2.html">Guides (or other categories)</a><a href="/docusaurus/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docusaurus/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docusaurus/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docusaurus/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 ConcordPay</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#оплата-на-платежной-странице-процессинга">Оплата на платежной странице процессинга</a></li><li><a href="#операция-покупки-через-apple-pay">Операция покупки через Apple Pay</a></li><li><a href="#подтверждение-платежа-apple-pay-apiapplepayment">Подтверждение платежа Apple Pay (api/apple/payment)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docusaurus/" class="nav-home"><img src="/docusaurus/img/concord-logo.png" alt="" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docusaurus/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docusaurus/docs/en/doc2.html">Guides (or other categories)</a><a href="/docusaurus/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docusaurus/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docusaurus/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docusaurus/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 ConcordPay</section></footer></div></body></html>
