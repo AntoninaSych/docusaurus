@@ -1,10 +1,9 @@
 {
-  "docs": {
-    "Developers": ["doc1","doc9","/docusaurus/hello-world"],
-    "Fin organizations": ["doc2"],
-    "Contacts": ["doc3"]
+  "UK": {
+    "DocUk": ["docUk","doc2" ],
+    "DocUk1": ["docUk","doc2" ]
   },
-  "ConcordPay": {
-    "Entrance": ["doc4", "doc5"]
+  "EN": {
+    "DocEN": ["docEn", "doc3" ]
   }
 }

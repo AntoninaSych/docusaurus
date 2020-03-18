@@ -20,8 +20,7 @@ class Api extends React.Component {
             {
                 content: (
                     <translate>
-                        Learn more using the [documentation on this
-                        site.](/test-site/docs/en/doc1.html)
+                        Api for Developers
                     </translate>
                 ),
                 title: <translate>Browse Docs</translate>,
@@ -54,9 +53,7 @@ class Api extends React.Component {
                                 This project is maintained by a dedicated group of people.
                             </translate>
                         </p>
-                        <div>
-                            <a href="/docusaurus/docs/en/doc1">(/docusaurus/docs/en/doc1)</a>
-                        </div>
+
                          <GridBlock contents={supportLinks} layout="fourColumn" />
                     </div>
                 </Container>

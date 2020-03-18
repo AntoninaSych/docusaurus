@@ -1,7 +1,6 @@
 ---
-id: version-2.0.3-doc2
+id: doc2
 title: Фінансовим компаніям
-original_id: doc2
 ---
 
 This is a link to [another document.](doc3.md)  

@@ -20,7 +20,8 @@ const users = [
   },
 ];
 
-const siteConfig = { usePrism: ['jsx'],
+const siteConfig = {
+  usePrism: ['jsx'],
   title: '', // Title for your website.
   tagline: 'A website for testing',
   url: 'AntoninaSych.github.io', // Your website URL
@@ -38,10 +39,12 @@ const siteConfig = { usePrism: ['jsx'],
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {page: 'api', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    // {doc: 'docEn', href:'/docEn', label: 'Docs-en'},
+    // {doc: 'docUk',href:'/docUk', label: 'Docs-uk'},
+    {page: 'en', label: 'EN'},
+    {page: 'ua', label: 'UK'},
+    // {page: 'help', label: 'Help'},
+    // {blog: true, label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
@@ -81,7 +84,8 @@ const siteConfig = { usePrism: ['jsx'],
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['https://buttons.github.io/buttons.js',
+    '/website/static/js/main.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',

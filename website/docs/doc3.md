@@ -1,7 +1,6 @@
 ---
-id: version-2.0.3-doc3
+id: doc3
 title: Контакти
-original_id: doc3
 ---
 
 +380 66 182 92 59
