@@ -1,71 +1,69 @@
 ---
 id: doc2
-title: Фінансовим компаніям
+title: Financial companies
 ---
 
 This is a link to [another document.](doc3.md)  
 This is a link to an [external page.](http://www.example.com)
 
-**Фінансовим компаніям**
+**English **
 
 
-**Сервіси електронної комерції**
+**E-commerce services**
 
-Банк Конкорд спільно з Процесинговим центром «ПРОКАРД» пропонують страховим, кредитним і фінансовим компаніям, ломбардам, а також підприємствам, що здійснюють посередницьку діяльність на платіжному ринку, підключення до сервісів електронної комерції:
-- Інтернет-еквайринг - підтримка покупок товарів / сервісів у власних інтернет-магазинах та інтернет-магазинах партнерів на web-сайті компанії
-- P2P-перекази - підтримка персональних переказів з картки на картку клієнтів компанії
-- Сервіс A2C (account-to-card) - реєстрове зарахування виплат на картки клієнтів з рахунку компанії
-- Сервіс C2A (card-to-account) - реєстрове стягування платежів з карт клієнтів на рахунок компанії
+Concord Bank together with PROCARD Processing Center offer insurance, credit and financial companies, pawnshops, as well as companies engaged in the intermediary activity in the payment market, connection to e-commerce services:
+- Online Acquisition - support for purchases of goods / services in our own online and partner online stores on the company website
+- P2P transfers - support of personal transfers from card to card of company clients
 
-**Переваги**
+**Advantages**
 
-- Інтернет-еквайринг
+- Internet Acquisition
 
-- Перехід на дистанційне обслуговування клієнтів компанії
+- Transition to the company's remote customer service
 
-- Розширення клієнтської бази за рахунок клієнтів з місць відсутності офісів компанії
+- Expansion of the client base at the expense of clients from places of absence of company offices
 
-- Скорочення витрат на обслуговування фінансових потоків, утримання персоналу та оренду офісів
+- Reduction of expenses on maintenance of financial flows, maintenance of the staff and rent of offices
 
-- P2P-перекази
+- P2P transfers
 
-- Крос-продаж додаткових послуг клієнтам компанії
+- Cross-selling of additional services to clients of the company
 
-- Сервіс A2C (account-to-card)
+- A2C (account-to-card) service
 
-- Автоматизація виплат клієнтам компанії
+- Automation of payments to clients of the company
 
-- Скорочення витрат на обслуговування фінансових потоків
+- Reduction of expenses for maintenance of financial flows
 
-- Сервіс C2A (card-to-account)
+- C2A (card-to-account) service
 
-- Автоматизація регулярних оплат клієнтами продуктів / сервісів компанії
+- Automation of regular payments by customers of company products / services
 
-- Скорочення витрат на обслуговування фінансових потоків
+- Reduction of expenses for maintenance of financial flows
 
-**Сучасні сервіси**
+**Modern services**
 
 - MasterPass
 
-- Сервіс надання інтернет-торговцю можливості отримання оплати від клієнта за технологією MasterPass - тобто за картками клієнта заведеним їм в електронний гаманець від МПС MasterCard
+- The service of providing the online merchant with the possibility of receiving payment from the client using MasterPass technology - that is, on the cards of the client brought to them in an electronic purse from the MasterCard MPS
 
 - Apple Pay
 
-- Сервіс надання інтернет-торговцю можливості отримання оплати від клієнта - власника смартфона Apple, який використовує токени своїх карт для розрахунків смартфоном в торгово-сервісній мережі
+- Online merchant service for receiving payment from a customer who owns an Apple smartphone that uses their card tokens to make payments with a smartphone in a retail and service network
 
-- Google Pay (сервіс в процесі імплементації)
+- Google Pay (implementation service)
 
-- Сервіс надання інтернет-торговцю можливості отримання оплати від клієнта - власника смартфона Android, який використовує токени своїх карт для розрахунків смартфоном в торгово-сервісній мережі
+- Online merchant service for receiving payment from a client - an Android smartphone owner who uses their card tokens to make payments with a smartphone in a retail and service network
 
-**Технічні моменти**
+**Technical points**
 
-Модуль підтримки інтернет-еквайрінгу ПЦ «ПРОКАРД», який використовується в Банку Конкорд:
+Module of support for Internet acquiring of PROCARD PC, used by Concord Bank:
 
-- Забезпечує обробку платежів, починаючи з виникнення замовлення і включає розбір конфліктних ситуацій, звірку підсумків, аналіз статистики платежів і т.д.;
+- Ensures payment processing, starting with the origin of the order and includes analysis of conflict situations, reconciliation of results, analysis of payment statistics, etc .;
 
-- Підтримує інтерфейс з авторизаційною системою;
+- Supports the interface with the authorization system;
 
-- Підтримує програми МПС, засновані на протоколах електронної комерції 3-D Secure:
+- Supports 3-D Secure e-commerce IPC programs:
 
     - Verified by VISA (VbV),
 
@@ -73,10 +71,10 @@ This is a link to an [external page.](http://www.example.com)
 
     - MasterCard Identity Check;
 
-    - Підтримує P2P-перекази;
+    - Supports P2P transfers;
 
-    - Підтримує роботу з сервісом MasterPass від МПС MasterCard;
+    - Supports work with MasterPass service from MasterCard MPS;
 
-    - Підтримує сервіс додаткової еквайрингової перевірки Look-Up;
+    - Supports the service of additional acquiring check Look-Up;
 
-    - Підтримує інформування по e-mail про операції як магазинів, так і клієнтів
+    - Supports e-mailing about operations of both stores and customers

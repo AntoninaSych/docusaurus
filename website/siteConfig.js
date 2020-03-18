@@ -41,8 +41,8 @@ const siteConfig = {
   headerLinks: [
     // {doc: 'docEn', href:'/docEn', label: 'Docs-en'},
     // {doc: 'docUk',href:'/docUk', label: 'Docs-uk'},
-    {page: 'en', label: 'EN'},
-    {page: 'ua', label: 'UK'},
+    {page: 'documents', label: 'Documents'},
+    // {page: 'ua', label: 'UK'},
     // {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
