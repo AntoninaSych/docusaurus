@@ -56,6 +56,7 @@ function Ua(props) {
           <p>UAAAAA  This project is maintained by a dedicated group of people.</p>
 
           <Button href={docUrl('docUk')}>DocUK</Button>
+          <Button href={'/docusaurus/docs/uk/docUk'}>DocUK</Button>
 
 
           <GridBlock contents={supportLinks} layout="threeColumn" />

@@ -56,7 +56,7 @@ function En(props) {
             <h1>   EN</h1>
           </header>
           <p>EEEENNNN  This project is maintained by a dedicated group of people.</p>
-          <Button href={docUrl('docEn')}>DocEn</Button>
+           <Button href={'/docusaurus/docs/en/docUk'}>DocEn</Button>
         </div>
       </Container>
     </div>
