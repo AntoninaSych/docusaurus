@@ -9,10 +9,10 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title> Blog</title>
-            <url>AntoninaSych.github.io/docusaurus/img/concord-logo.png</url>
+            <url>AntoninaSych.github.io/docusaurus/img/footer-concord-logo.png</url>
             <link>AntoninaSych.github.io/docusaurus/blog</link>
         </image>
-        <copyright>Copyright © 2020 ConcordPay</copyright>
+        <copyright>Copyright © 2020   Concord</copyright>
         <item>
             <title><![CDATA[New Version 1.0.0]]></title>
             <link>AntoninaSych.github.io/docusaurus/blog/2017/10/24/new-version-1.0.0.html</link>
