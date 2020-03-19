@@ -14,7 +14,7 @@ function docUrl(doc, language) {
     return (
         siteConfig.baseUrl +
         "docs/" +
-        (language ? language + "/" : "uk") +
+        (language ? language + "/" : "") +
         doc +
         ".html"
     );

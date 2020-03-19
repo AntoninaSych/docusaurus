@@ -9,10 +9,10 @@
     "tagline": "Вперед",
     "docs": {
       "dispatcher": {
-        "title": "Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.\n"
+        "title": "Спецификация по взаимодействию торговца с ПО Dispatcher"
       },
       "version-1.0.0-dispatcher": {
-        "title": "Спецификация по взаимодействию торговца с ПО Dispatcher ver 1.1.\n"
+        "title": "Спецификация по взаимодействию торговца с ПО Dispatcher"
       },
       "version-1.0.0-dictionary": {
         "title": "Cправочник"
