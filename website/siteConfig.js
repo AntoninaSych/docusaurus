@@ -52,7 +52,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/concord-logo.png',
-  footerIcon: 'img/concord-logo.png',
+  footerIcon: 'img/footer-concord-logo.png',
   favicon: 'img/concord-logo.png',
 
   /* Colors for website */
