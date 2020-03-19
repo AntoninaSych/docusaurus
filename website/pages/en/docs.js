@@ -14,21 +14,25 @@ function docUrl(doc, language) {
     return (
         siteConfig.baseUrl +
         "docs/" +
-        (language ? language + "/" : "") +
+        (language ? language + "/" : "uk") +
         doc +
         ".html"
     );
 }
 
 class Docs extends React.Component {
+
+
     render() {
         return (
             <Redirect
-                redirect={docUrl("docUk", this.props.language)}
+                redirect={docUrl("dispatcher", this.props.language)}
                 config={siteConfig}
             />
         );
     }
 }
 
+
 module.exports = Docs;
+

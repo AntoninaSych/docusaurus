@@ -1,18 +1,14 @@
 {
-  "version-1.0.0-UK": {
-    "DocUk": [
-      "version-1.0.0-docUk",
-      "version-1.0.0-doc2"
+  "version-1.0.0-docs": {
+    "ConcordPay": [
+      "version-1.0.0-dispatcher",
+      "version-1.0.0-dictionary"
     ],
-    "DocUk1": [
-      "version-1.0.0-docUk",
-      "version-1.0.0-doc2"
-    ]
-  },
-  "version-1.0.0-EN": {
-    "DocEN": [
-      "version-1.0.0-docEn",
-      "version-1.0.0-doc3"
+    "ConcordProject1": [
+      "version-1.0.0-concordproject1"
+    ],
+    "ConcordProject2": [
+      "version-1.0.0-concordproject2"
     ]
   }
 }

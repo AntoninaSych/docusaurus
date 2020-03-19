@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
   usePrism: ['jsx'],
   title: '', // Title for your website.
-  tagline: 'A website for testing',
+  tagline: 'Documentation',
   url: 'AntoninaSych.github.io', // Your website URL
   baseUrl: '/docusaurus/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -39,9 +39,13 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    // {doc: 'docEn', href:'/docEn', label: 'Docs-en'},
-    // {doc: 'docUk',href:'/docUk', label: 'Docs-uk'},
-    {page: 'documents', label: 'Documents'},
+     // {page: 'documents', label: 'Documents'}, //если нужна промежуточная страница
+    {
+      doc: "dispatcher",
+      href: "/docs",
+      label: "Documents"
+    }
+   // {page: 'documents', label: 'Documents'}
     // {page: 'ua', label: 'UK'},
     // {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
@@ -51,9 +55,9 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/concord-logo.png',
+  headerIcon: 'img/footer-concord-logo.png',
   footerIcon: 'img/footer-concord-logo.png',
-  favicon: 'img/concord-logo.png',
+  favicon: 'img/footer-concord-logo.png',
 
   /* Colors for website */
   colors: {
@@ -76,7 +80,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} ConcordPay`,
+  copyright: `Copyright © ${new Date().getFullYear()}   Concord`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

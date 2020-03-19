@@ -56,7 +56,7 @@ function En(props) {
                         <h1> <translate>Documents</translate></h1>
                     </header>
 
-                    <Button href={'/docusaurus/docs/'+`${language}`+'/docUk'}><translate>Documents</translate></Button>
+                    <Button href={'/docusaurus/docs/'+`${language}`+'/dispatcher'}><translate>Documents</translate></Button>
                 </div>
             </Container>
         </div>

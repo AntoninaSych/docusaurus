@@ -1,9 +1,8 @@
+
 {
-  "UK": {
-    "DocUk": ["docUk","doc2" ],
-    "DocUk1": ["docUk","doc2" ]
-  },
-  "EN": {
-    "DocEN": ["docEn", "doc3" ]
+  "docs": {
+    "ConcordPay": ["dispatcher","dictionary"],
+    "ConcordProject1": ["concordproject1"],
+    "ConcordProject2": ["concordproject2"]
   }
 }
