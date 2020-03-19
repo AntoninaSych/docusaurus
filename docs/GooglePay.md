@@ -1,6 +1,6 @@
 ---
-id: concordproject2
-title: concordproject2
+id: GooglePay
+title: GooglePay
 ---
 
 

@@ -1,7 +1,7 @@
 ---
-id: version-1.0.0-concordproject2
-title: concordproject2
-original_id: concordproject2
+id: version-1.0.0-GooglePay
+title: GooglePay
+original_id: GooglePay
 ---
 
 

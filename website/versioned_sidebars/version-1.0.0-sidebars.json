@@ -4,11 +4,12 @@
       "version-1.0.0-dispatcher",
       "version-1.0.0-dictionary"
     ],
-    "ConcordProject1": [
-      "version-1.0.0-concordproject1"
+    "ApplePay": [
+      "version-1.0.0-ApplePayWeb",
+      "version-1.0.0-ApplePayApp"
     ],
-    "ConcordProject2": [
-      "version-1.0.0-concordproject2"
+    "GooglePay": [
+      "version-1.0.0-GooglePay"
     ]
   }
 }

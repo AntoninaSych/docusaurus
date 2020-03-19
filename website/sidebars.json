@@ -2,7 +2,7 @@
 {
   "docs": {
     "ConcordPay": ["dispatcher","dictionary"],
-    "ConcordProject1": ["concordproject1"],
-    "ConcordProject2": ["concordproject2"]
+    "ApplePay": ["ApplePayWeb","ApplePayApp"],
+    "GooglePay": ["GooglePay"]
   }
 }
