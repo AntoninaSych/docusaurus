@@ -4,8 +4,8 @@
 
 
   "Documents": "Документи",
-    "next": "Следующая",
-    "previous": "Предыдущая",
+    "next": "Вперед",
+    "previous": "Назад",
     "tagline": "Вперед",
     "docs": {
       "dispatcher": {

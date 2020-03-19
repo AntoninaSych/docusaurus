@@ -3,6 +3,38 @@ id: version-1.0.0-ApplePayWeb
 title: ApplePayWeb
 original_id: ApplePayWeb
 ---
+## Операция покупки через Apple Pay
+
+Для  интеграции кнопки  Apple Pay  на платежную страницу интернет магазина необходимо реализовать метод ApplePaySession.canMakePaymentsWithActiveCard, этот метод определяет поддерживает ли данное устройство оплату с помощью Apple Pay.
+
+
+Если поддерживает оплата - необходимо отрисовать кнопку “Купить с помощью Apple Pay”.
+
+
+Далее необходимо создать объект **ApplePaySession** , с параметрами покупки:
+``` js
+  countryCode: 'UA',
+  currencyCode: 'UAH',
+  supportedNetworks: ['visa', 'masterCard'],
+  merchantCapabilities: ['supports3DS'],
+  total: { label: 'Your Merchant Name', amount: '10.00' },
+
+```
+Описание полей можно посмотреть в документации Apple Pay on Web.
+
+
+На событие **onvalidatemerchant** необходимо повесить обработчик, в котором будет вызываться API “api/apple/validate” . Описание метода будет ниже.
+
+На событие **onpaymentauthorized** необходимо повесить обработчик, который будет вызывать API “api/apple/payment”.
+
+
+После подтверждения платежа в **onpaymentauthorized** необходимо вызвать метод
+
+**ApplePaySession.completePayment**.
+
+
+Документацию по ApplePaySession можно найти на оф сайте Apple (https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api).
+
 
 ## Валидация мерчанта Apple Pay (api/apple/validate). 
  
