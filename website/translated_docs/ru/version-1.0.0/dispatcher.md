@@ -8,7 +8,7 @@ original_id: dispatcher
 
 Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
 
-Production url:   **https://pay.concord.ua/api/**
+**Production url:**   https://pay.concord.ua/api/
 
 POST параметры:
  

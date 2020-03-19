@@ -16,6 +16,12 @@
       },
       "version-1.0.0-dictionary": {
         "title": "Cправочник"
+      },
+      "version-1.0.0-ApplePayWeb": {
+        "title": "Web"
+      },
+      "version-1.0.0-ApplePayApp": {
+        "title": "App"
       }
     },
     "links": {
