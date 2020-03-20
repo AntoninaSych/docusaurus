@@ -3,139 +3,142 @@ id: version-1.0.0-dictionary
 title: dictionary
 original_id: dictionary
 ---
-## Справочник.  Статусы платежа
+## Довідник. Статуси платежу
 
-| Значение     | Статус                                   |
+
+| значення | статус                                  |
 |--------------|------------------------------------------|
-| ON-PAYMENT   | Платеж исполняется                       |
-| NEW          | Платеж создан, ожидается ввод реквизитов |
-| APPROVED     | Платеж успешен                           |
-| DECLINED     | Платеж отклонен                          |
-| REFUNDINPROC | В процессе возврата                      |
-| REFUNDED     | Возвращен                                |
-| EXPIRED      | Платеж просрочен                         |
-| WAITING-AUTH | Ожидает подтверждение авторизации        |
-| 3ds          | Требует проверки 3D-Secure               |
+| ON-PAYMENT   | платіж здійснюється                       |
+| NEW          | Платіж створений, очікується введення реквізитів |
+| APPROVED     | платіж успішний                           |
+| DECLINED     | платіж відхилений                          |
+| REFUNDINPROC | В процесі повернення                     |
+| REFUNDED     | повернуто                                |
+| EXPIRED      | платіж прострочений                        |
+| WAITING-AUTH | Чекає підтвердження авторизації        |
+| 3ds          | Вимагає перевірки 3D-Secure              |
 
-## Справочник. Коды ответов
 
-| Код  | Расшифровка                                                                                                                                                  | Расшифровка (ENG)                                                       |
+
+## Довідник. коди відповідей
+
+| Код  | Розшифровка                                                                                                                                                  | Расшифровка (ENG)                                                       |
 |------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| 1    | ОПЕРАЦИЯ РАЗРЕШЕНА                                                                                                                                           |                                                                         |
-| 50   | Финансовая транзакция не выполнена                                                                                                                           | General                                                                 |
-| 51   | Карта клиента просрочена                                                                                                                                     | Expired card                                                            |
-| 52   | Превышено число попыток ввода PIN                                                                                                                            | Number of PIN tries exceeded                                            |
-| 53   | Не удалось маршрутизировать транзакцию                                                                                                                       | No sharing allowed                                                      |
-| 55   | Транзакция имеет некорректные атрибуты или данная операция не разрешена                                                                                      | Invalid transaction                                                     |
-| 56   | Запрашиваемая операция не поддерживается хостом                                                                                                              | Transaction not supported by institution                                |
-| 57   | Карта клиента имеет статус 'потеряна' или 'украдена'                                                                                                         | Lost or stolen card                                                     |
-| 58   | Карта клиента имеет неправильный статус                                                                                                                      | Invalid card status                                                     |
-| 59   | Карта клиента имеет ограниченные возможности                                                                                                                 | Restricted status                                                       |
-| 60   | Не найден вендор с указанным номером счета                                                                                                                   | Account not found                                                       |
-| 61   | Неверное количество информационных полей для заданного вендора                                                                                               | Wrong customer information for payment                                  |
-| 62   | Неверный формат информационного поля платежа                                                                                                                 | Customer information format error                                       |
-| 63   | Не найден prepaid-код                                                                                                                                        | Prepaid Code not found                                                  |
-| 64   | Track2 карты клиента содержит неверную информацию                                                                                                            | Bad track information Track2                                            |
-| 69   | Неверный формат сообщения                                                                                                                                    | Bad message edit                                                        |
-| 74   | Невозможно авторизовать                                                                                                                                      | Unable to authorize                                                     |
-| 75   | Неверный PAN карты                                                                                                                                           | Invalid credit PAN                                                      |
-| 76   | На счете не хватает средств                                                                                                                                  | Insufficient funds                                                      |
-| 78   | Произошло дублирование транзакции                                                                                                                            | Duplicate transaction received                                          |
-| 82   | Превышение количества использований карты клиента                                                                                                            | Maximum number of times used                                            |
-| 85   | Невозможно выдать баланс                                                                                                                                     | Balance not allowed                                                     |
-| 95   | Превышение лимита по сумме                                                                                                                                   | Amount over maximum                                                     |
-| 100  | Невозможно провести транзакцию                                                                                                                               | Unable to process                                                       |
-| 101  | Невозможно авторизовать – необходимо позвонить издателю карты                                                                                                | Unable to authorize – call issuer                                       |
-| 105  | Данный тип карт не поддерживается                                                                                                                            | Card not supported                                                      |
-| 200  | Неправильный счет клиента                                                                                                                                    | Invalid account                                                         |
-| 201  | Неправильный PIN                                                                                                                                             | Incorrect PIN                                                           |
-| 205  | Некорректная сумма                                                                                                                                           | Invalid advance amount                                                  |
-| 209  | Неверный код транзакции                                                                                                                                      | Invalid transaction code                                                |
-| 210  | Неверное значение CAVV                                                                                                                                       | Bad CAVV                                                                |
-| 211  | Неверное значение CVV2                                                                                                                                       | Bad Cvv2                                                                |
-| 212  | Не найдена оригинальная транзакция для слипа                                                                                                                 | Original transaction not found for slip                                 |
-| 213  | Слип принимается повторно                                                                                                                                    | Slip already received                                                   |
-| 501  | Транзакция выполнена успешно                                                                                                                                 | Approved                                                                |
-| 502  | Транзакция выполнена успешно на частичную сумму                                                                                                              | Partially approved                                                      |
-| 503  | Транзакция выполнена успешно только на сумму покупки (для транзакции 118 – Purchase with Cashback)                                                           | Purchase only approved                                                  |
-| 510  | Нет номера счета в запросе транзакции, есть несколько счетов указанного типа, и терминал поддерживает выбор счета                                            | Should select account number                                            |
-| 511  | Необходимо сменить PVV (разрешена только транзакция PIN Change)                                                                                              | Should change PVV                                                       |
-| 512  | Необходимо подтвердить результаты проверки платежа в системе online-приема платежей                                                                          | Confirm Payment Precheck                                                |
-| 513  | Транзакция запроса списка уведомлений выполнена успешно                                                                                                      | Select Bill                                                             |
-| 514  | Необходимо подтвердить результаты предпроверки операции                                                                                                      | Customer confirmation requested                                         |
-| 515  | Не найдена оригинальная транзакция                                                                                                                           | Original transaction not found                                          |
-| 516  | Слип уже принят                                                                                                                                              | Slip already received                                                   |
-| 517  | Ошибка в реквизитах платежа                                                                                                                                  | Personal information input error                                        |
-| 520  | Невозможно захватить Prepaid-код                                                                                                                             | Prepaid code not found                                                  |
-| 521  | Баланс корр. счета исчерпан                                                                                                                                  | Corresponding account exhausted                                         |
-| 522  | Превышен эквайринговый лимит                                                                                                                                 | Acquirer limit exceeded                                                 |
-| 524  | Истек срок действия диамического PVV                                                                                                                         | Dynamic PVV Expired                                                     |
-| 525  | Слабый PIN                                                                                                                                                   | Weak PIN                                                                |
-| 540  | Карта потеряна                                                                                                                                               | Lost card                                                               |
-| 541  | Карта украдена                                                                                                                                               | Stolen card                                                             |
-| 549  | Недопустимый тип платежа для данного вендора                                                                                                                 | Ineligible vendor account                                               |
-| 550  | Несанкционированное использование                                                                                                                            | Unauthorized usage                                                      |
-| 551  | Истек срок действия карты                                                                                                                                    | Expired card                                                            |
-| 552  | Неверная карта                                                                                                                                               | Invalid card                                                            |
-| 553  | Неверный PIN-код                                                                                                                                             | Invalid PIN                                                             |
-| 554  | Системная ошибка                                                                                                                                             | System error                                                            |
-| 555  | Неподходящая транзакция                                                                                                                                      | Ineligible transaction                                                  |
-| 556  | Неподходящий счет                                                                                                                                            | Ineligible account                                                      |
-| 557  | Транзакция не поддерживается                                                                                                                                 | Transaction not supported                                               |
-| 558  | Карта ограничена (данная операция по карте не разрешена)                                                                                                     | Restricted Card                                                         |
-| 559  | Недостаточно средств на счете                                                                                                                                | Insufficient funds                                                      |
-| 560  | Превышен лимит на число использований карты                                                                                                                  | Uses limit exceeded                                                     |
-| 561  | Лимит на снятие наличных будет превышен                                                                                                                      | Withdrawal limit would be exceeded                                      |
-| 562  | Достигнут или превышен лимит на число неверных вводов PIN-кода                                                                                               | PIN tries limit was reached                                             |
-| 563  | Достигнут лимит на снятие наличных                                                                                                                           | Withdrawal limit already reached                                        |
-| 564  | Достигнут лимит на депозит                                                                                                                                   | Credit amount limit                                                     |
-| 565  | Нет информации для предоставления отчета по счету                                                                                                            | No statement information                                                |
-| 566  | Предоставление отчета по счету невозможно (запрещено)                                                                                                        | Statement not available                                                 |
-| 567  | Недопустимая сумма                                                                                                                                           | Invalid amount                                                          |
-| 568  | Транзакция отвергнута внешним хостом                                                                                                                         | External decline                                                        |
-| 569  | Несогласованный запрос (данная карта не обслуживается в данном терминале)                                                                                    | No sharing                                                              |
-| 571  | Необходимо обратиться к издателю                                                                                                                             | Contact card issuer                                                     |
-| 572  | Авторизатор недоступен                                                                                                                                       | Destination not available                                               |
-| 573  | Ошибка маршрутизации                                                                                                                                         | Routing error                                                           |
-| 574  | Ошибка формата                                                                                                                                               | Format error                                                            |
-| 575  | Транзакция отвергнута внешним хостом по специальному условию (владелец карты подозревается в мошенничестве)                                                  | External decline special condition                                      |
-| 580  | Неверный CVV                                                                                                                                                 | Bad CVV                                                                 |
-| 581  | Неверный CVV2                                                                                                                                                | Bad CVV2                                                                |
-| 582  | Неверная транзакция (транзакция не разрешена с такими условиями проведения)                                                                                  | Invalid transaction                                                     |
-| 583  | Лимит на число неверных вводов PIN-кода  УЖЕ достигнут  (т.е. ранее был достигнут лимит на число неверных вводов PIN-кода, после чего был введен верный PIN) | PIN tries limit was exceeded                                            |
-| 584  | Неверное значение проверочного числа 3D Secure Cardholder Authentication Verification Value                                                                  | Bad CAVV                                                                |
-| 585  | Неверное значение криптограммы ARQC                                                                                                                          | Bad ARQC                                                                |
-| 800  | Ошибка формата                                                                                                                                               | Format error                                                            |
-| 801  | Не найдена оригинальная транзакция для реверса                                                                                                               | Original transaction not found                                          |
-| 809  | Неверная операция закрытия периода                                                                                                                           | Invalid close transaction                                               |
-| 810  | Произошел тайм-аут                                                                                                                                           | Transaction timeout                                                     |
-| 811  | Системная ошибка                                                                                                                                             | System error                                                            |
-| 820  | Неправильный идентификатор терминала                                                                                                                         | Invalid terminal identifier                                             |
-| 880  | Был послан последний пакет - прогрузка успешно завершена                                                                                                     | Download has been received in its entirety                              |
-| 881  | Предыдущий этап прогрузки был успешно выполнен –имеются еще данные                                                                                           | Download received successfully and there is more data for this download |
-| 882  | Прогрузка терминала остановлена. Необходимо позвонить в процессинговый центр                                                                                 | Download aborted (call for service)                                     |
-| 897  | Получена неверная криптограмма в транзакции                                                                                                                  | Invalid cryptogram                                                      |
-| 898  | Получен неверный MAC                                                                                                                                         | Invalid MAC                                                             |
-| 899  | Ошибка синхронизации                                                                                                                                         | Sequence error—resync                                                   |
-| 900  | Превышено число попыток ввода PIN. Требуется захват карты                                                                                                    | Pin Tries Limit Exceeded                                                |
-| 901  | Карта просрочена, требуется захват карты                                                                                                                     | Expired Card                                                            |
-| 909  | Требуется захват карты                                                                                                                                       | External Decline Special Condition                                      |
-| 959  | Административная транзакция не поддерживается                                                                                                                | Administrative transaction not supported                                |
-| 2001 | Необходима верификация 3DS                                                                                                                                   | Need 3ds verify                                                         |
+| 1    | ОПЕРАЦІЯ дозволено                                                                                                                                          |                                                                         |
+| 50   | Фінансова транзакція не виконана                                                                                                                           | General                                                                 |
+| 51   | Карта клієнта прострочена                                                                                                                                     | Expired card                                                            |
+| 52   | Перевищено число спроб введення PIN                                                                                                                            | Number of PIN tries exceeded                                            |
+| 53   | Чи не вдалося маршрутизировать транзакцію                                                                                                                       | No sharing allowed                                                      |
+| 55   | Транзакція має некоректні атрибути або дана операція не дозволена                                                                                      | Invalid transaction                                                     |
+| 56   | Запитувана операція не підтримується хостом                                                                                                              | Transaction not supported by institution                                |
+| 57   | Карта клієнта має статус 'втрачена' або 'вкрадена'                                                                                                         | Lost or stolen card                                                     |
+| 58   | Карта клієнта має неправильний статус                                                                                                                      | Invalid card status                                                     |
+| 59   | Карта клієнта має обмежені можливості                                                                                                                 | Restricted status                                                       |
+| 60   | Не вдалося знайти вендор із зазначеним номером рахунку                                                                                                                   | Account not found                                                       |
+| 61   | Неправильне кількість інформаційних полів для заданого вендора                                                                                              | Wrong customer information for payment                                  |
+| 62   | Невірний формат інформаційного поля платежу                                                                                                                 | Customer information format error                                       |
+| 63   | Не вдалося знайти prepaid-код                                                                                                                                        | Prepaid Code not found                                                  |
+| 64   | Track2 картки клієнта містить невірну інформацію                                                                                                           | Bad track information Track2                                            |
+| 69   | Невірний формат повідомлення                                                                                                                                   | Bad message edit                                                        |
+| 74   | неможливо авторизувати                                                                                                                                      | Unable to authorize                                                     |
+| 75   | Невірний PAN карти                                                                                                                                           | Invalid credit PAN                                                      |
+| 76   | На рахунку не вистачає засобів                                                                                                                                 | Insufficient funds                                                      |
+| 78   | Сталося дублювання транзакції                                                                                                                            | Duplicate transaction received                                          |
+| 82   | Перевищення кількості використань карти клієнта                                                                                                            | Maximum number of times used                                            |
+| 85   | Неможливо видати баланс                                                                                                                                     | Balance not allowed                                                     |
+| 95   | Перевищення ліміту за сумою                                                                                                                                   | Amount over maximum                                                     |
+| 100  | Неможливо провести транзакцію                                                                                                                               | Unable to process                                                       |
+| 101  | Неможливо авторизувати - необхідно зателефонувати видавцеві карти                                                                                                | Unable to authorize – call issuer                                       |
+| 105  | Даний тип карт не підтримується                                                                                                                            | Card not supported                                                      |
+| 200  | Неправильний рахунок клієнта                                                                                                                                    | Invalid account                                                         |
+| 201  | неправильний PIN                                                                                                                                             | Incorrect PIN                                                           |
+| 205  | Некоректна сума                                                                                                                                           | Invalid advance amount                                                  |
+| 209  | Невірний код транзакції                                                                                                                                      | Invalid transaction code                                                |
+| 210  | Некоректне значення CAVV                                                                                                                                       | Bad CAVV                                                                |
+| 211  | Некоректне значенняCVV2                                                                                                                                       | Bad Cvv2                                                                |
+| 212  | Чи не знайдена оригінальна транзакція для сліпа                                                                                                                | Original transaction not found for slip                                 |
+| 213  | Сліп приймається повторно                                                                                                                                    | Slip already received                                                   |
+| 501  | Транзакція виконана успішно                                                                                                                                 | Approved                                                                |
+| 502  | Транзакція виконана успішно на часткову суму                                                                                                              | Partially approved                                                      |
+| 503  | Транзакція виконана успішно тільки на суму покупки (для транзакції 118 - Purchase with Cashback)                                                           | Purchase only approved                                                  |
+| 510  | Немає номера рахунку в запиті транзакції, є кілька рахунків зазначеного типу, і термінал підтримує вибір рахунки                                            | Should select account number                                            |
+| 511  | Необхідно змінити PVV (дозволена тільки транзакція PIN Change)                                                                                              | Should change PVV                                                       |
+| 512  | Необхідно підтвердити результати перевірки платежу в системі online-прийому платежів                                                                          | Confirm Payment Precheck                                                |
+| 513  | Транзакція запиту списку повідомлень виконана успішно                                                                                                      | Select Bill                                                             |
+| 514  | Необхідно підтвердити результати предпроверкі операції                                                                                                      | Customer confirmation requested                                         |
+| 515  | Чи не знайдена оригінальна транзакція                                                                                                                           | Original transaction not found                                          |
+| 516  | Сліп вже прийнятий                                                                                                                                              | Slip already received                                                   |
+| 517  | Помилка у реквізитах платежу                                                                                                                                  | Personal information input error                                        |
+| 520  | Неможливо захопити Prepaid-код                                                                                                                             | Prepaid code not found                                                  |
+| 521  | Баланс кор. рахунку вичерпаний                                                                                                                                 | Corresponding account exhausted                                         |
+| 522  | Перевищено еквайрингової ліміт                                                                                                                                 | Acquirer limit exceeded                                                 |
+| 524  | Закінчився термін дії діаміческого PVV                                                                                                                         | Dynamic PVV Expired                                                     |
+| 525  | слабкий PIN                                                                                                                                                   | Weak PIN                                                                |
+| 540  | Карта втрачена                                                                                                                                               | Lost card                                                               |
+| 541  | карта украдена                                                                                                                                               | Stolen card                                                             |
+| 549  | Неприпустимий тип платежу для даного вендора                                                                                                                 | Ineligible vendor account                                               |
+| 550  | несанкціоноване використання                                                                                                                            | Unauthorized usage                                                      |
+| 551  | Закінчився термін дії карти                                                                                                                                    | Expired card                                                            |
+| 552  | Невірна карта                                                                                                                                               | Invalid card                                                            |
+| 553  | Неправильний PIN-код                                                                                                                                             | Invalid PIN                                                             |
+| 554  | Системна помилка                                                                                                                                             | System error                                                            |
+| 555  | невідповідна транзакція                                                                                                                                     | Ineligible transaction                                                  |
+| 556  | невідповідний рахунок                                                                                                                                            | Ineligible account                                                      |
+| 557  | Транзакція не підтримується                                                                                                                                 | Transaction not supported                                               |
+| 558  | Карта обмежена (дана операція по картці не вирішена)                                                                                                    | Restricted Card                                                         |
+| 559  | Недостатньо коштів на рахунку                                                                                                                                | Insufficient funds                                                      |
+| 560  | Перевищено ліміт на число використань карти                                                                                                                  | Uses limit exceeded                                                     |
+| 561  | Ліміт на зняття готівки буде перевищено                                                                                                                      | Withdrawal limit would be exceeded                                      |
+| 562  | Досягнуто або перевищено ліміт на число невірних спроб правильно ввести PIN                                                                                               | PIN tries limit was reached                                             |
+| 563  | Досягнуто ліміт на зняття готівки                                                                                                                           | Withdrawal limit already reached                                        |
+| 564  | Досягнуто ліміт на депозит                                                                                                                                   | Credit amount limit                                                     |
+| 565  | Немає інформації для надання звіту за рахунком                                                                                                            | No statement information                                                |
+| 566  | Надання звіту по рахунку неможливо (заборонено)                                                                                                        | Statement not available                                                 |
+| 567  | неприпустима сума                                                                                                                                           | Invalid amount                                                          |
+| 568  | Транзакція відкинута зовнішнім хостом                                                                                                                         | External decline                                                        |
+| 569  | Неузгоджений запит (дана картка не обслуговується в даному терміналі)                                                                                    | No sharing                                                              |
+| 571  | Необхідно звернутися до видавця                                                                                                                             | Contact card issuer                                                     |
+| 572  | авторизатор недоступний                                                                                                                                      | Destination not available                                               |
+| 573  | Помилка маршрутизації                                                                                                                                        | Routing error                                                           |
+| 574  | Помилка формату                                                                                                                                               | Format error                                                            |
+| 575  | Транзакція відкинута зовнішнім хостом за спеціальним умові (власник карти підозрюється в шахрайстві)                                                  | External decline special condition                                      |
+| 580  | невірний CVV                                                                                                                                                | Bad CVV                                                                 |
+| 581  | невірний CVV2                                                                                                                                                | Bad CVV2                                                                |
+| 582  | Невірна транзакція (транзакція не дозволена з такими умовами проведення)                                                                                  | Invalid transaction                                                     |
+| 583  | Ліміт на число невірних спроб правильно ввести PIN ВЖЕ досягнутий (тобто раніше був досягнутий ліміт на число невірних спроб правильно ввести PIN, після чого був введений вірний PIN)| PIN tries limit was exceeded                                            |
+| 584  | Некоректна перевірочного числа 3D Secure Cardholder Authentication Verification Value                                                               | Bad CAVV                                                                |
+| 585  | Некоректна криптограми ARQC                                                                                                                          | Bad ARQC                                                                |
+| 800  | Помилка формату                                                                                                                                               | Format error                                                            |
+| 801  | Чи не знайдена оригінальна транзакція для реверсу                                                                                                               | Original transaction not found                                          |
+| 809  | Невірна операція закриття періоду                                                                                                                           | Invalid close transaction                                               |
+| 810  | Стався тайм-аут                                                                                                                                           | Transaction timeout                                                     |
+| 811  | Системна помилка                                                                                                                                             | System error                                                            |
+| 820  | Неправильний ідентифікатор терміналу                                                                                                                         | Invalid terminal identifier                                             |
+| 880  | Був посланий останній пакет - прогрузкі успішно завершена                                                                                                     | Download has been received in its entirety                              |
+| 881  | Попередній етап прогрузкі був успішно виконаний -чи ще дані                                                                                           | Download received successfully and there is more data for this download |
+| 882  | Прогрузкі терміналу зупинена. Необхідно зателефонувати в процесинговий центр                                                                                 | Download aborted (call for service)                                     |
+| 897  | Отримано невірна криптограма в транзакції                                                                                                                 | Invalid cryptogram                                                      |
+| 898  | Отримано невірний MAC                                                                                                                                        | Invalid MAC                                                             |
+| 899  | Помилка синхронізації                                                                                                                                         | Sequence error—resync                                                   |
+| 900  | Перевищено число спроб введення PIN. Потрібно захоплення карти                                                                                                    | Pin Tries Limit Exceeded                                                |
+| 901  | Карта прострочена, потрібно захоплення карти                                                                                                                    | Expired Card                                                            |
+| 909  | Потрібно захоплення карти                                                                                                                                       | External Decline Special Condition                                      |
+| 959  | Адміністративна транзакція не підтримується                                                                                                                | Administrative transaction not supported                                |
+| 2001 | Необхідна верифікація 3DS                                                                                                                                   | Need 3ds verify                                                         |
 
-## Справочник. Коды системных ошибок
+## Довідник. Коди системних помилок
 
-| Код  | Расшифровка                               | Расшифровка (ENG)                        |
+| Код  | Розшифровка                               | Розшифровка (ENG)                        |
 |------|-------------------------------------------|------------------------------------------|
-| -1   |  Системная ошибка                         |                                          |
-| -2   | Не передан параметр merchant_id           | General                                  |
-| -3   | Мерчант не найден                         | Expired card                             |
-| -4   | Неправильная подпись                      | Number of PIN tries exceeded             |
-| -5   | Лимит на выполнение операций              | No sharing allowed                       |
-| -6   | Неверный номер карты                      | Invalid transaction                      |
-| -7   | Неверная валюта                           | Transaction not supported by institution |
+| -1   | Системна помилка                         |                                          |
+| -2   | не переданий параметр merchant_id           | General                                  |
+| -3   | Мерчант не знайден                         | Expired card                             |
+| -4   | неправильна підпис                     | Number of PIN tries exceeded             |
+| -5   | Ліміт на виконання операцій              | No sharing allowed                       |
+| -6   | Невірний номер карти                      | Invalid transaction                      |
+| -7   | Невірна валюта                           | Transaction not supported by institution |
 | -8   | Неверный  order_id                        | Lost or stolen card                      |
-| -9   | Операция с таким order_id  уже существует | Invalid card status                      |
-| -10  | Платеж не найден                          | Restricted status                        |
-| -11  | Неверный тип операции                     | Account not found                        |
-| -999 | Системная ошибка                          | Wrong customer information for payment   |
+| -9   | Операція з таким order_id вже існує | Invalid card status                      |
+| -10  | Платіж не найден                         | Restricted status                        |
+| -11  | Невірний тип операції                    | Account not found                        |
+| -999 | Системна помилка                         | Wrong customer information for payment   |
