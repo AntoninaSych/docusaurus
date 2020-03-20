@@ -9,44 +9,19 @@
     "tagline": "Документацiя",
     "docs": {
       "dispatcher": {
-        "title": "Специфікація по взаємодії торговця з ПО Dispatcher ver 1.1..\n"
+        "title": "Специфікація по взаємодії торговця з ПО Dispatcher"
       },
       "version-1.0.0-dispatcher": {
-        "title": "Специфікація по взаємодії торговця з ПО Dispatcher ver 1.1.\n"
+        "title": "Специфікація по взаємодії торговця з ПО Dispatcher"
       },
       "version-1.0.0-dictionary": {
         "title": "Довiдник"
       },
-      "version-1.0.0/version-1.0.0-doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "version-1.0.0-ApplePayWeb": {
+        "title": "Web"
       },
-      "version-1.0.0/version-1.0.0-doc2": {
-        "title": "document number 2"
-      },
-      "version-1.0.0/version-1.0.0-doc3": {
-        "title": "This is document number 3"
-      },
-      "version-1.0.0/version-1.0.0-doc9": {
-        "title": "Оплата на платежной странице процессинга"
-      },
-      "version-1.0.0/version-1.0.0-doc4": {
-        "title": "Other Document"
-      },
-      "version-1.0.0/version-1.0.0-doc5": {
-        "title": "Fifth Document"
-      },
-      "version-1.0.1/version-1.0.1-doc9": {
-        "title": "Оплата на платежной странице процессинга"
-      },
-      "version-2.0.0/version-2.0.0-doc9": {
-        "title": "Оплата на платежной странице процессинга"
-      },
-      "version-2.0.1/version-2.0.1-doc9": {
-        "title": "Оплата на платежной странице процессинга"
-      },
-      "version-2.0.2/version-2.0.2-doc9": {
-        "title": "Разработчикам"
+      "version-1.0.0-ApplePayApp": {
+        "title": "App"
       }
     },
     "links": {
