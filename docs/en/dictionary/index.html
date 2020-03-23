@@ -69,147 +69,147 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">dictionary</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="directory-payment-statuses"></a><a href="#directory-payment-statuses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Directory. Payment Statuses</h2>
 <table>
 <thead>
-<tr><th>Значение</th><th>Статус</th></tr>
+<tr><th>Value</th><th>Status</th></tr>
 </thead>
 <tbody>
-<tr><td>ON-PAYMENT</td><td>Платеж исполняется</td></tr>
-<tr><td>NEW</td><td>Платеж создан, ожидается ввод реквизитов</td></tr>
-<tr><td>APPROVED</td><td>Платеж успешен</td></tr>
-<tr><td>DECLINED</td><td>Платеж отклонен</td></tr>
-<tr><td>REFUNDINPROC</td><td>В процессе возврата</td></tr>
-<tr><td>REFUNDED</td><td>Возвращен</td></tr>
-<tr><td>EXPIRED</td><td>Платеж просрочен</td></tr>
-<tr><td>WAITING-AUTH</td><td>Ожидает подтверждение авторизации</td></tr>
-<tr><td>3ds</td><td>Требует проверки 3D-Secure</td></tr>
+<tr><td>ON-PAYMENT</td><td>Payment is being executed</td></tr>
+<tr><td>NEW</td><td>Payment created, details expected</td></tr>
+<tr><td>APPROVED</td><td>Payment successful</td></tr>
+<tr><td>DECLINED</td><td>Payment declined</td></tr>
+<tr><td>REFUNDINPROC</td><td>In return process</td></tr>
+<tr><td>REFUNDED</td><td>Returned</td></tr>
+<tr><td>EXPIRED</td><td>Payment is past due</td></tr>
+<tr><td>WAITING-AUTH</td><td>Awaiting authorization confirmation</td></tr>
+<tr><td>3ds</td><td>Requires verification 3D-Secure</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="directory-answer-codes"></a><a href="#directory-answer-codes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Directory. Answer Codes</h2>
 <table>
 <thead>
-<tr><th>Код</th><th>Расшифровка</th><th>Расшифровка (ENG)</th></tr>
+<tr><th>Code</th><th>Decryption</th><th>Расшифровка (ENG)</th></tr>
 </thead>
 <tbody>
-<tr><td>1</td><td>ОПЕРАЦИЯ РАЗРЕШЕНА</td><td></td></tr>
-<tr><td>50</td><td>Финансовая транзакция не выполнена</td><td>General</td></tr>
-<tr><td>51</td><td>Карта клиента просрочена</td><td>Expired card</td></tr>
-<tr><td>52</td><td>Превышено число попыток ввода PIN</td><td>Number of PIN tries exceeded</td></tr>
-<tr><td>53</td><td>Не удалось маршрутизировать транзакцию</td><td>No sharing allowed</td></tr>
-<tr><td>55</td><td>Транзакция имеет некорректные атрибуты или данная операция не разрешена</td><td>Invalid transaction</td></tr>
-<tr><td>56</td><td>Запрашиваемая операция не поддерживается хостом</td><td>Transaction not supported by institution</td></tr>
-<tr><td>57</td><td>Карта клиента имеет статус 'потеряна' или 'украдена'</td><td>Lost or stolen card</td></tr>
-<tr><td>58</td><td>Карта клиента имеет неправильный статус</td><td>Invalid card status</td></tr>
-<tr><td>59</td><td>Карта клиента имеет ограниченные возможности</td><td>Restricted status</td></tr>
-<tr><td>60</td><td>Не найден вендор с указанным номером счета</td><td>Account not found</td></tr>
-<tr><td>61</td><td>Неверное количество информационных полей для заданного вендора</td><td>Wrong customer information for payment</td></tr>
-<tr><td>62</td><td>Неверный формат информационного поля платежа</td><td>Customer information format error</td></tr>
-<tr><td>63</td><td>Не найден prepaid-код</td><td>Prepaid Code not found</td></tr>
-<tr><td>64</td><td>Track2 карты клиента содержит неверную информацию</td><td>Bad track information Track2</td></tr>
-<tr><td>69</td><td>Неверный формат сообщения</td><td>Bad message edit</td></tr>
-<tr><td>74</td><td>Невозможно авторизовать</td><td>Unable to authorize</td></tr>
-<tr><td>75</td><td>Неверный PAN карты</td><td>Invalid credit PAN</td></tr>
-<tr><td>76</td><td>На счете не хватает средств</td><td>Insufficient funds</td></tr>
-<tr><td>78</td><td>Произошло дублирование транзакции</td><td>Duplicate transaction received</td></tr>
-<tr><td>82</td><td>Превышение количества использований карты клиента</td><td>Maximum number of times used</td></tr>
-<tr><td>85</td><td>Невозможно выдать баланс</td><td>Balance not allowed</td></tr>
-<tr><td>95</td><td>Превышение лимита по сумме</td><td>Amount over maximum</td></tr>
-<tr><td>100</td><td>Невозможно провести транзакцию</td><td>Unable to process</td></tr>
-<tr><td>101</td><td>Невозможно авторизовать – необходимо позвонить издателю карты</td><td>Unable to authorize – call issuer</td></tr>
-<tr><td>105</td><td>Данный тип карт не поддерживается</td><td>Card not supported</td></tr>
-<tr><td>200</td><td>Неправильный счет клиента</td><td>Invalid account</td></tr>
-<tr><td>201</td><td>Неправильный PIN</td><td>Incorrect PIN</td></tr>
-<tr><td>205</td><td>Некорректная сумма</td><td>Invalid advance amount</td></tr>
-<tr><td>209</td><td>Неверный код транзакции</td><td>Invalid transaction code</td></tr>
-<tr><td>210</td><td>Неверное значение CAVV</td><td>Bad CAVV</td></tr>
-<tr><td>211</td><td>Неверное значение CVV2</td><td>Bad Cvv2</td></tr>
-<tr><td>212</td><td>Не найдена оригинальная транзакция для слипа</td><td>Original transaction not found for slip</td></tr>
-<tr><td>213</td><td>Слип принимается повторно</td><td>Slip already received</td></tr>
-<tr><td>501</td><td>Транзакция выполнена успешно</td><td>Approved</td></tr>
-<tr><td>502</td><td>Транзакция выполнена успешно на частичную сумму</td><td>Partially approved</td></tr>
-<tr><td>503</td><td>Транзакция выполнена успешно только на сумму покупки (для транзакции 118 – Purchase with Cashback)</td><td>Purchase only approved</td></tr>
-<tr><td>510</td><td>Нет номера счета в запросе транзакции, есть несколько счетов указанного типа, и терминал поддерживает выбор счета</td><td>Should select account number</td></tr>
-<tr><td>511</td><td>Необходимо сменить PVV (разрешена только транзакция PIN Change)</td><td>Should change PVV</td></tr>
-<tr><td>512</td><td>Необходимо подтвердить результаты проверки платежа в системе online-приема платежей</td><td>Confirm Payment Precheck</td></tr>
-<tr><td>513</td><td>Транзакция запроса списка уведомлений выполнена успешно</td><td>Select Bill</td></tr>
-<tr><td>514</td><td>Необходимо подтвердить результаты предпроверки операции</td><td>Customer confirmation requested</td></tr>
-<tr><td>515</td><td>Не найдена оригинальная транзакция</td><td>Original transaction not found</td></tr>
-<tr><td>516</td><td>Слип уже принят</td><td>Slip already received</td></tr>
-<tr><td>517</td><td>Ошибка в реквизитах платежа</td><td>Personal information input error</td></tr>
-<tr><td>520</td><td>Невозможно захватить Prepaid-код</td><td>Prepaid code not found</td></tr>
-<tr><td>521</td><td>Баланс корр. счета исчерпан</td><td>Corresponding account exhausted</td></tr>
-<tr><td>522</td><td>Превышен эквайринговый лимит</td><td>Acquirer limit exceeded</td></tr>
-<tr><td>524</td><td>Истек срок действия диамического PVV</td><td>Dynamic PVV Expired</td></tr>
-<tr><td>525</td><td>Слабый PIN</td><td>Weak PIN</td></tr>
-<tr><td>540</td><td>Карта потеряна</td><td>Lost card</td></tr>
-<tr><td>541</td><td>Карта украдена</td><td>Stolen card</td></tr>
-<tr><td>549</td><td>Недопустимый тип платежа для данного вендора</td><td>Ineligible vendor account</td></tr>
-<tr><td>550</td><td>Несанкционированное использование</td><td>Unauthorized usage</td></tr>
-<tr><td>551</td><td>Истек срок действия карты</td><td>Expired card</td></tr>
-<tr><td>552</td><td>Неверная карта</td><td>Invalid card</td></tr>
-<tr><td>553</td><td>Неверный PIN-код</td><td>Invalid PIN</td></tr>
-<tr><td>554</td><td>Системная ошибка</td><td>System error</td></tr>
-<tr><td>555</td><td>Неподходящая транзакция</td><td>Ineligible transaction</td></tr>
-<tr><td>556</td><td>Неподходящий счет</td><td>Ineligible account</td></tr>
-<tr><td>557</td><td>Транзакция не поддерживается</td><td>Transaction not supported</td></tr>
-<tr><td>558</td><td>Карта ограничена (данная операция по карте не разрешена)</td><td>Restricted Card</td></tr>
-<tr><td>559</td><td>Недостаточно средств на счете</td><td>Insufficient funds</td></tr>
-<tr><td>560</td><td>Превышен лимит на число использований карты</td><td>Uses limit exceeded</td></tr>
-<tr><td>561</td><td>Лимит на снятие наличных будет превышен</td><td>Withdrawal limit would be exceeded</td></tr>
-<tr><td>562</td><td>Достигнут или превышен лимит на число неверных вводов PIN-кода</td><td>PIN tries limit was reached</td></tr>
-<tr><td>563</td><td>Достигнут лимит на снятие наличных</td><td>Withdrawal limit already reached</td></tr>
-<tr><td>564</td><td>Достигнут лимит на депозит</td><td>Credit amount limit</td></tr>
-<tr><td>565</td><td>Нет информации для предоставления отчета по счету</td><td>No statement information</td></tr>
-<tr><td>566</td><td>Предоставление отчета по счету невозможно (запрещено)</td><td>Statement not available</td></tr>
-<tr><td>567</td><td>Недопустимая сумма</td><td>Invalid amount</td></tr>
-<tr><td>568</td><td>Транзакция отвергнута внешним хостом</td><td>External decline</td></tr>
-<tr><td>569</td><td>Несогласованный запрос (данная карта не обслуживается в данном терминале)</td><td>No sharing</td></tr>
-<tr><td>571</td><td>Необходимо обратиться к издателю</td><td>Contact card issuer</td></tr>
-<tr><td>572</td><td>Авторизатор недоступен</td><td>Destination not available</td></tr>
-<tr><td>573</td><td>Ошибка маршрутизации</td><td>Routing error</td></tr>
-<tr><td>574</td><td>Ошибка формата</td><td>Format error</td></tr>
-<tr><td>575</td><td>Транзакция отвергнута внешним хостом по специальному условию (владелец карты подозревается в мошенничестве)</td><td>External decline special condition</td></tr>
-<tr><td>580</td><td>Неверный CVV</td><td>Bad CVV</td></tr>
-<tr><td>581</td><td>Неверный CVV2</td><td>Bad CVV2</td></tr>
-<tr><td>582</td><td>Неверная транзакция (транзакция не разрешена с такими условиями проведения)</td><td>Invalid transaction</td></tr>
-<tr><td>583</td><td>Лимит на число неверных вводов PIN-кода  УЖЕ достигнут  (т.е. ранее был достигнут лимит на число неверных вводов PIN-кода, после чего был введен верный PIN)</td><td>PIN tries limit was exceeded</td></tr>
-<tr><td>584</td><td>Неверное значение проверочного числа 3D Secure Cardholder Authentication Verification Value</td><td>Bad CAVV</td></tr>
-<tr><td>585</td><td>Неверное значение криптограммы ARQC</td><td>Bad ARQC</td></tr>
-<tr><td>800</td><td>Ошибка формата</td><td>Format error</td></tr>
-<tr><td>801</td><td>Не найдена оригинальная транзакция для реверса</td><td>Original transaction not found</td></tr>
-<tr><td>809</td><td>Неверная операция закрытия периода</td><td>Invalid close transaction</td></tr>
-<tr><td>810</td><td>Произошел тайм-аут</td><td>Transaction timeout</td></tr>
-<tr><td>811</td><td>Системная ошибка</td><td>System error</td></tr>
-<tr><td>820</td><td>Неправильный идентификатор терминала</td><td>Invalid terminal identifier</td></tr>
-<tr><td>880</td><td>Был послан последний пакет - прогрузка успешно завершена</td><td>Download has been received in its entirety</td></tr>
-<tr><td>881</td><td>Предыдущий этап прогрузки был успешно выполнен –имеются еще данные</td><td>Download received successfully and there is more data for this download</td></tr>
-<tr><td>882</td><td>Прогрузка терминала остановлена. Необходимо позвонить в процессинговый центр</td><td>Download aborted (call for service)</td></tr>
-<tr><td>897</td><td>Получена неверная криптограмма в транзакции</td><td>Invalid cryptogram</td></tr>
-<tr><td>898</td><td>Получен неверный MAC</td><td>Invalid MAC</td></tr>
-<tr><td>899</td><td>Ошибка синхронизации</td><td>Sequence error—resync</td></tr>
-<tr><td>900</td><td>Превышено число попыток ввода PIN. Требуется захват карты</td><td>Pin Tries Limit Exceeded</td></tr>
-<tr><td>901</td><td>Карта просрочена, требуется захват карты</td><td>Expired Card</td></tr>
-<tr><td>909</td><td>Требуется захват карты</td><td>External Decline Special Condition</td></tr>
-<tr><td>959</td><td>Административная транзакция не поддерживается</td><td>Administrative transaction not supported</td></tr>
-<tr><td>2001</td><td>Необходима верификация 3DS</td><td>Need 3ds verify</td></tr>
+<tr><td>1</td><td>OPERATION PERMITTED</td><td></td></tr>
+<tr><td>50</td><td>Financial Transaction Failed</td><td>General</td></tr>
+<tr><td>51</td><td>Customer card expired</td><td>Expired card</td></tr>
+<tr><td>52</td><td>PIN attempts exceeded</td><td>Number of PIN tries exceeded</td></tr>
+<tr><td>53</td><td>Failed to route transaction</td><td>No sharing allowed</td></tr>
+<tr><td>55</td><td>The transaction has invalid attributes or this operation is not allowed.</td><td>Invalid transaction</td></tr>
+<tr><td>56</td><td>The requested operation is not supported by the host</td><td>Transaction not supported by institution</td></tr>
+<tr><td>57</td><td>Client card has the status of 'lost' or 'stolen'</td><td>Lost or stolen card</td></tr>
+<tr><td>58</td><td>Customer card has an invalid status</td><td>Invalid card status</td></tr>
+<tr><td>59</td><td>Customer card has limited features</td><td>Restricted status</td></tr>
+<tr><td>60</td><td>The vendor with the specified account number was not found</td><td>Account not found</td></tr>
+<tr><td>61</td><td>Invalid number of information fields for the given vendor</td><td>Wrong customer information for payment</td></tr>
+<tr><td>62</td><td>Invalid payment information field format</td><td>Customer information format error</td></tr>
+<tr><td>63</td><td>No prepaid code found</td><td>Prepaid Code not found</td></tr>
+<tr><td>64</td><td>Track2 client card contains incorrect information</td><td>Bad track information Track2</td></tr>
+<tr><td>69</td><td>Invalid message format</td><td>Bad message edit</td></tr>
+<tr><td>74</td><td>Unable to authorize</td><td>Unable to authorize</td></tr>
+<tr><td>75</td><td>Invalid PAN Card</td><td>Invalid credit PAN</td></tr>
+<tr><td>76</td><td>There are not enough funds in the account</td><td>Insufficient funds</td></tr>
+<tr><td>78</td><td>Transaction Duplicate</td><td>Duplicate transaction received</td></tr>
+<tr><td>82</td><td>Exceeding the number of uses of a customer card</td><td>Maximum number of times used</td></tr>
+<tr><td>85</td><td>Unable to issue balance</td><td>Balance not allowed</td></tr>
+<tr><td>95</td><td>Exceeding the limit for the amount</td><td>Amount over maximum</td></tr>
+<tr><td>100</td><td>Unable to complete transaction</td><td>Unable to process</td></tr>
+<tr><td>101</td><td>Unable to authorize - must call the card publisher</td><td>Unable to authorize – call issuer</td></tr>
+<tr><td>105</td><td>This type of card is not supported.</td><td>Card not supported</td></tr>
+<tr><td>200</td><td>Invalid customer account</td><td>Invalid account</td></tr>
+<tr><td>201</td><td>Incorrect PIN</td><td>Incorrect PIN</td></tr>
+<tr><td>205</td><td>Invalid amount</td><td>Invalid advance amount</td></tr>
+<tr><td>209</td><td>Invalid Transaction Code</td><td>Invalid transaction code</td></tr>
+<tr><td>210</td><td>Invalid CAVV value</td><td>Bad CAVV</td></tr>
+<tr><td>211</td><td>Invalid CVV2 value</td><td>Bad Cvv2</td></tr>
+<tr><td>212</td><td>The original transaction for the slip was not found</td><td>Original transaction not found for slip</td></tr>
+<tr><td>213</td><td>Slip is accepted again</td><td>Slip already received</td></tr>
+<tr><td>501</td><td>Transaction completed successfully</td><td>Approved</td></tr>
+<tr><td>502</td><td>Partial transaction completed successfully</td><td>Partially approved</td></tr>
+<tr><td>503</td><td>Transaction completed successfully only for the purchase amount (for transaction 118 – Purchase with Cashback)</td><td>Purchase only approved</td></tr>
+<tr><td>510</td><td>There is no account number in the transaction request, there are several accounts of the specified type, and the terminal supports account selection</td><td>Should select account number</td></tr>
+<tr><td>511</td><td>PVV must be changed (only transaction allowed PIN Change)</td><td>Should change PVV</td></tr>
+<tr><td>512</td><td>It is necessary to confirm the results of payment verification in the online payment acceptance system</td><td>Confirm Payment Precheck</td></tr>
+<tr><td>513</td><td>Notification List Request Transaction Successful</td><td>Select Bill</td></tr>
+<tr><td>514</td><td>It is necessary to confirm the results of the pre-check operation</td><td>Customer confirmation requested</td></tr>
+<tr><td>515</td><td>Original transaction not found.</td><td>Original transaction not found</td></tr>
+<tr><td>516</td><td>Slip already accepted</td><td>Slip already received</td></tr>
+<tr><td>517</td><td>Error in payment details</td><td>Personal information input error</td></tr>
+<tr><td>520</td><td>Unable to capture Prepaid code</td><td>Prepaid code not found</td></tr>
+<tr><td>521</td><td>Balance Corr. bills exhausted</td><td>Corresponding account exhausted</td></tr>
+<tr><td>522</td><td>Acquiring limit exceeded</td><td>Acquirer limit exceeded</td></tr>
+<tr><td>524</td><td>Diamic PVV Expired</td><td>Dynamic PVV Expired</td></tr>
+<tr><td>525</td><td>Weak PIN</td><td>Weak PIN</td></tr>
+<tr><td>540</td><td>Card lost</td><td>Lost card</td></tr>
+<tr><td>541</td><td>Card stolen</td><td>Stolen card</td></tr>
+<tr><td>549</td><td>Invalid payment type for this vendor</td><td>Ineligible vendor account</td></tr>
+<tr><td>550</td><td>unauthorized use</td><td>Unauthorized usage</td></tr>
+<tr><td>551</td><td>Card expired</td><td>Expired card</td></tr>
+<tr><td>552</td><td>Invalid Card</td><td>Invalid card</td></tr>
+<tr><td>553</td><td>Invalid PIN</td><td>Invalid PIN</td></tr>
+<tr><td>554</td><td>System error</td><td>System error</td></tr>
+<tr><td>555</td><td>Inappropriate transaction</td><td>Ineligible transaction</td></tr>
+<tr><td>556</td><td>Inappropriate account</td><td>Ineligible account</td></tr>
+<tr><td>557</td><td>Transaction not supported</td><td>Transaction not supported</td></tr>
+<tr><td>558</td><td>Card limited (this card operation is not allowed)</td><td>Restricted Card</td></tr>
+<tr><td>559</td><td>Not enough funds in the account</td><td>Insufficient funds</td></tr>
+<tr><td>560</td><td>Card usage limit exceeded</td><td>Uses limit exceeded</td></tr>
+<tr><td>561</td><td>Cash withdrawal limit will be exceeded</td><td>Withdrawal limit would be exceeded</td></tr>
+<tr><td>562</td><td>The limit on the number of incorrect PIN entries has been reached or exceeded</td><td>PIN tries limit was reached</td></tr>
+<tr><td>563</td><td>Cash withdrawal limit reached</td><td>Withdrawal limit already reached</td></tr>
+<tr><td>564</td><td>Deposit limit reached</td><td>Credit amount limit</td></tr>
+<tr><td>565</td><td>No account reporting information available</td><td>No statement information</td></tr>
+<tr><td>566</td><td>Reporting is not possible (prohibited)</td><td>Statement not available</td></tr>
+<tr><td>567</td><td>Invalid amount</td><td>Invalid amount</td></tr>
+<tr><td>568</td><td>Transaction rejected by external host</td><td>External decline</td></tr>
+<tr><td>569</td><td>Inconsistent request (this card is not served in this terminal)</td><td>No sharing</td></tr>
+<tr><td>571</td><td>Contact publisher</td><td>Contact card issuer</td></tr>
+<tr><td>572</td><td>Authorizer unavailable</td><td>Destination not available</td></tr>
+<tr><td>573</td><td>Routing error</td><td>Routing error</td></tr>
+<tr><td>574</td><td>Format error</td><td>Format error</td></tr>
+<tr><td>575</td><td>The transaction was rejected by the external host on a special condition (the cardholder is suspected of fraud)</td><td>External decline special condition</td></tr>
+<tr><td>580</td><td>Invalid CVV</td><td>Bad CVV</td></tr>
+<tr><td>581</td><td>Invalid CVV2</td><td>Bad CVV2</td></tr>
+<tr><td>582</td><td>Invalid transaction (transaction is not allowed with these conditions)</td><td>Invalid transaction</td></tr>
+<tr><td>583</td><td>The limit on the number of incorrect PIN entries has ALREADY been reached (i.e., the limit on the number of incorrect PIN entries was reached earlier, after which the correct PIN was entered)</td><td>PIN tries limit was exceeded</td></tr>
+<tr><td>584</td><td>Invalid check value 3D Secure Cardholder Authentication Verification Value</td><td>Bad CAVV</td></tr>
+<tr><td>585</td><td>Invalid ARQC cryptogram value</td><td>Bad ARQC</td></tr>
+<tr><td>800</td><td>Format error</td><td>Format error</td></tr>
+<tr><td>801</td><td>No original reverse transaction found</td><td>Original transaction not found</td></tr>
+<tr><td>809</td><td>Invalid Period Closing Operation</td><td>Invalid close transaction</td></tr>
+<tr><td>810</td><td>Timeout occurred</td><td>Transaction timeout</td></tr>
+<tr><td>811</td><td>System error</td><td>System error</td></tr>
+<tr><td>820</td><td>Invalid terminal id</td><td>Invalid terminal identifier</td></tr>
+<tr><td>880</td><td>The last packet was sent - loading completed successfully</td><td>Download has been received in its entirety</td></tr>
+<tr><td>881</td><td>The previous loading step was successfully completed - there is more data</td><td>Download received successfully and there is more data for this download</td></tr>
+<tr><td>882</td><td>Terminal loading stopped. It is necessary to call the processing center</td><td>Download aborted (call for service)</td></tr>
+<tr><td>897</td><td>Received invalid cryptogram in transaction</td><td>Invalid cryptogram</td></tr>
+<tr><td>898</td><td>Invalid MAC Received</td><td>Invalid MAC</td></tr>
+<tr><td>899</td><td>Sync error</td><td>Sequence error—resync</td></tr>
+<tr><td>900</td><td>PIN attempts exceeded. Card capture required</td><td>Pin Tries Limit Exceeded</td></tr>
+<tr><td>901</td><td>Card expired, card capture required</td><td>Expired Card</td></tr>
+<tr><td>909</td><td>Card capture required</td><td>External Decline Special Condition</td></tr>
+<tr><td>959</td><td>Administrative transaction not supported</td><td>Administrative transaction not supported</td></tr>
+<tr><td>2001</td><td>Verification required 3DS</td><td>Need 3ds verify</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="directory-system-error-codes"></a><a href="#directory-system-error-codes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Directory. System Error Codes</h2>
 <table>
 <thead>
-<tr><th>Код</th><th>Расшифровка</th><th>Расшифровка (ENG)</th></tr>
+<tr><th>Code</th><th>Decryption</th><th>Decryption (ENG)</th></tr>
 </thead>
 <tbody>
-<tr><td>-1</td><td>Системная ошибка</td><td></td></tr>
-<tr><td>-2</td><td>Не передан параметр merchant_id</td><td>General</td></tr>
-<tr><td>-3</td><td>Мерчант не найден</td><td>Expired card</td></tr>
-<tr><td>-4</td><td>Неправильная подпись</td><td>Number of PIN tries exceeded</td></tr>
-<tr><td>-5</td><td>Лимит на выполнение операций</td><td>No sharing allowed</td></tr>
-<tr><td>-6</td><td>Неверный номер карты</td><td>Invalid transaction</td></tr>
-<tr><td>-7</td><td>Неверная валюта</td><td>Transaction not supported by institution</td></tr>
-<tr><td>-8</td><td>Неверный  order_id</td><td>Lost or stolen card</td></tr>
-<tr><td>-9</td><td>Операция с таким order_id  уже существует</td><td>Invalid card status</td></tr>
-<tr><td>-10</td><td>Платеж не найден</td><td>Restricted status</td></tr>
-<tr><td>-11</td><td>Неверный тип операции</td><td>Account not found</td></tr>
-<tr><td>-999</td><td>Системная ошибка</td><td>Wrong customer information for payment</td></tr>
+<tr><td>-1</td><td>System error</td><td></td></tr>
+<tr><td>-2</td><td>Parameter not passed merchant_id</td><td>General</td></tr>
+<tr><td>-3</td><td>Merchant not found</td><td>Expired card</td></tr>
+<tr><td>-4</td><td>Invalid Signature</td><td>Number of PIN tries exceeded</td></tr>
+<tr><td>-5</td><td>Operation limit</td><td>No sharing allowed</td></tr>
+<tr><td>-6</td><td>Invalid card number</td><td>Invalid transaction</td></tr>
+<tr><td>-7</td><td>Invalid currency</td><td>Transaction not supported by institution</td></tr>
+<tr><td>-8</td><td>Incorrect  order_id</td><td>Lost or stolen card</td></tr>
+<tr><td>-9</td><td>Operation with such order_id  already exists</td><td>Invalid card status</td></tr>
+<tr><td>-10</td><td>Payment not found</td><td>Restricted status</td></tr>
+<tr><td>-11</td><td>Invalid operation type</td><td>Account not found</td></tr>
+<tr><td>-999</td><td>System error</td><td>Wrong customer information for payment</td></tr>
 </tbody>
 </table>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docusaurus/docs/en/dispatcher"><span class="arrow-prev">← </span><span>Specification for the interaction of the merchant with the Dispatcher ver 1.1 software.</span></a><a class="docs-next button" href="/docusaurus/docs/en/ApplePayWeb"><span class="function-name-prevnext">ApplePayWeb</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#directory-payment-statuses">Directory. Payment Statuses</a></li><li><a href="#directory-answer-codes">Directory. Answer Codes</a></li><li><a href="#directory-system-error-codes">Directory. System Error Codes</a></li></ul></nav></div><footer class="nav-footer" id="footer"><a href="https://concord.ua/" target="_blank" rel="noreferrer noopener" class="fbOpenSource" style="display:flex;justify-content:center"><img src="/docusaurus/img/footer-concord-logo.png" alt="Concord" width="65" height="45"/></a><section class="copyright" style="display:flex;justify-content:center">Copyright © 2020   Concord</section></footer></div></body></html>
