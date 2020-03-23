@@ -6,320 +6,321 @@ original_id: dispatcher
 
 ## Payment on the payment processing page
 
-Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
+To pay on the payment processing page, you need to redirect to the page of the processing center, with POST data.
 
 **Production url:**   https://pay.concord.ua/api/
 
-POST параметры:
+POST params:
  
-| Параметр     | Описание                                                                                                                                                                          | Значение        |
+| Parameter     | Description                                                                                                                                                                          | Value        |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| operation    | Тип операции                                                                                                                                                                      | Purchase        |
-| merchant_id  | ID мерчанта, выдается поцесcингом                                                                                                                                                 |                 |
-| amount       | Сумма операции. Пример 500.00                                                                                                                                                     |                 |
-| signature    | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                          |                 |
-|              | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,currency_iso,description разделенных “;” (точка с запятой) в кодировке UTF-8. |                 |
-|              | Порядок параметров при конкатенации важен!                                                                                                                                        |                 |
-| order_id     | Уникальный номер операции на стороне торговца. Если операция дублируется - торговец получает ошибку.                                                                              |                 |
-| currency_iso | Валюта платежа.                                                                                                                                                                   | UAH             |
-| description  | Назначение платежа. Выводится на платежной странице, при вводе платежных реквизитов. Отображается в выписке по счету и реестрах                                                   |                 |
-| add_params   | Массив с дополнительными параметрами. Дополнительные параметры потом возвращаются мерчанту в callback вызове                                                                      |                 |
-| approve_url  | URL для переадресации в случае, если платеж успешен                                                                                                                               |                 |
-| decline_url  | URL для переадресации в случае, если платеж не успешен                                                                                                                            |                 |
-| cancel_url   | URL для переадресации в случае, если пользователь отказался совершить оплату                                                                                                      |                 |
-| callback_url | URL на который прийдет информация о результате выполнения платежа                                                                                                                 |                 |
-| redirect     | true/false - по умолчанию true, если параметр стоит true, тогда клиент не будет получать переадресацию, а получит url платежной страницы                                          | Не обязательный |
-| auth_type    | По умолчанию 1 - покупка, 2-Предавторизация                                                                                                                                       | Не обязательный |
+| operation    | Type of transaction                                                                                                                                                                      | Purchase        |
+| merchant_id  | ID merchant, issued by processing                                                                                                                                              |                 |
+| amount       | The amount of the transaction. Example 500.00                                                                                                                                                     |                 |
+| signature    | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                         |                 |
+|              | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, currency_iso, description separated by “;” (semicolon) in UTF-8 encoding. |                 |
+|              | The order of parameters during concatenation is important!                                                                                                                                        |                 |
+| order_id     | Unique transaction number on the merchant side. If the operation is duplicated, the merchant receives an error.                                                                              |                 |
+| currency_iso | Currency of payment.                                                                                                                                                                   | UAH             |
+| description  | Purpose of payment. It is displayed on the payment page when entering payment details. Displayed in the account statement and registries                                                   |                 |
+| add_params   | An array with additional parameters. Additional parameters are then returned to the merchant in a callback call                                                                      |                 |
+| approve_url  | Redirect URL in case payment is successful                                                                                                                               |                 |
+| decline_url  | Redirect URL in case payment is unsuccessful                                                                                                                            |                 |
+| cancel_url   | Redirect URL in case the user refuses to make a payment                                                                                                      |                 |
+| callback_url | URL to which information about the result of the payment will come                                                                                                                 |                 |
+| redirect     | true / false - defaults to true, if the parameter is true, then the client will not receive redirects, but will receive the url of the payment page                                          | Optional |
+| auth_type    | Default 1 - purchase, 2-Pre-authorization                                                                                                                                       | Optional |
 
 
 ## Callback call to send notification of payment status
 
 
-Данные отправляются по URL адресу который указан в параметрах платежа в поле
-
-callback_url.
+Data is sent to the URL specified in the payment parameters in the field callback_url.
 
 
-Данные отправляются на сервер торговца в формате JSON
+Data is sent to the merchant's server in JSON format
 
 
-Параметры:
+Parameters:
 
 
-| Название параметра | Описание                                                                                                                                                                | Значения           |
+| Parameter | Description                                                                                                                                                                | Values           |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| merchantAccount    | ID мерчанта                                                                                                                                                             |                    |
-| orderReference     | ID операции в системе торговца                                                                                                                                          |                    |
-| amount             | Сумма операции                                                                                                                                                          |                    |
-| currency           | Валюта операции                                                                                                                                                         |                    |
-| phone              | Номер телефона клиента(Если включен ввод телефона на платежной странице)                                                                                                |                    |
-| createdDate        | Дата платежа в формате YYYY-MM-DD HH:II:SS                                                                                                                              |                    |
-|                    | Пример: 2018-12-14 12:01:26                                                                                                                                             |                    |
-| cardPan            | Маскированный PAN карты.                                                                                                                                                |                    |
-|                    | Пример: 535277******0298                                                                                                                                                |                    |
-| cardType           | Тип карты                                                                                                                                                               | Visa               |
+| merchantAccount    | Merchant ID                                                                                                                                                             |                    |
+| orderReference     | Merchant system transaction ID                                                                                                                                         |                    |
+| amount             | Transaction amount                                                                                                                                                          |                    |
+| currency           | Transaction currency                                                                                                                                                         |                    |
+| phone              | Customer phone number (If phone input on the payment page is enabled)                                                                                                |                    |
+| createdDate        | Payment Date in Format YYYY-MM-DD HH:II:SS                                                                                                                              |                    |
+|                    | Example: 2018-12-14 12:01:26                                                                                                                                             |                    |
+| cardPan            | Masked PAN Card.                                                                                                                                                |                    |
+|                    | Example: 535277******0298                                                                                                                                                |                    |
+| cardType           | Card type                                                                                                                                                             | Visa               |
 |                    |                                                                                                                                                                         | MasterCard         |
-| fee                | Комиссия за операцию                                                                                                                                                    |                    |
-| transactionId      | ID транзакции на стороне ПЦ                                                                                                                                             |                    |
-| type               | Тип операции. На данный момент параметр не используется                                                                                                                 |                    |
-| recToken           | Токен для рекурентного платежа                                                                                                                                          |                    |
-| transactionStatus  | Статус операции                                                                                                                                                         | Approved - Успешно |
-|                    |                                                                                                                                                                         | Declined - Отказ   |
-| reason             | Текстовая причина отказа                                                                                                                                                |                    |
-| reasonCode         | Код ошибки при отказе                                                                                                                                                   |                    |
-| merchantSignature  | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                |                    |
-|                    | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,orderReference,amount,currency разделенных “;” (точка с запятой) в кодировке UTF-8. |                    |
-|                    | **Порядок параметров при конкатенации важен!**                                                                                                                              |                    |
+| fee                | Transaction fee                                                                                                                                                  |                    |
+| transactionId      | Transaction ID on the PC side                                                                                                                                             |                    |
+| type               | Type of transaction. The parameter is not currently used.                                                                                                                 |                    |
+| recToken           | Token for recurring payment                                                                                                                                          |                    |
+| transactionStatus  | Transaction Status                                                                                                                                                         | Approved - Successfully |
+|                    |                                                                                                                                                                         | Declined - Renouncement   |
+| reason             | Text reason for rejection                                                                                                                                                |                    |
+| reasonCode         | Failure Error Code                                                                                                                                                  |                    |
+| merchantSignature  | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                |                    |
+|                    | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, orderReference, amount, currency separated by “;” (semicolon) in UTF-8 encoding. |                    |
+|                    | **The order of parameters during concatenation is important!**                                                                                                                              |                    |
 
 
 ## Recurrent payments RecPayment (payment by token)
 
 **Production url:**   https://pay.concord.ua/api/
 
+To make a recurring payment, you must send a POST request with the following parameters:
 
-Для совершения рекуррентного платежа необходимо отправить POST запрос со следующими параметрами:
-
-| Название        | Описание                                                                                                                                                                                          |
+| Parameter        | Description                                                                                                                                                                                          |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| operation       |  Необходимое значение для данной операции RecPayment                                                                                                                                              |
-| merchant_id     | Идентификатор мерчанта                                                                                                                                                                            |
-| amount          | Сумма операции. Пример 500.00                                                                                                                                                                     |
-| recurring_token | Токен полученный от ПС                                                                                                                                                                            |
-| order_id        | Уникальный номер заказа в системе торговца                                                                                                                                                        |
-| description     | Назначение платежа                                                                                                                                                                                |
-| currency_iso    | Валюта. На данный момент только UAH                                                                                                                                                               |
-| auth_type       | 1 - покупка, 2 - предавторизация. Не обязательный. По умолчанию - 1                                                                                                                               |
-| signature       | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                                          |
-|                 | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,recurring_token,currency_iso,description разделенных “;” (точка с запятой) в кодировке UTF-8. |
-|                 | **Порядок параметров при конкатенации важен!**                                                                                                                                                        |
+| operation       | Required value for this operation RecPayment                                                                                                                                             |
+| merchant_id     | Merchant ID                                                                                                                                                                            |
+| amount          | The amount of the transaction. Example 500.00                                                                                                                                                                    |
+| recurring_token | Token received from PC                                                                                                                                                                           |
+| order_id        | Unique order number in the merchant system                                                                                                                                                        |
+| description     | Purpose of payment                                                                                                                                                                                |
+| currency_iso    | Currency. Currently only UAH                                                                                                                                                               |
+| auth_type       | 1 - purchase, 2 - pre-authorization. Not required. The default is 1.                                                                                                                               |
+| signature       | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                                          |
+|                 | The string subject to HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, recurring_token, currency_iso, description separated by “;” (semicolon) in UTF-8 encoding. |
+|                 | **The order of parameters during concatenation is important!**                                                                                                                                                        |
 
-В ответ приходят следующие параметры:
+The following parameters come in response:
 
-| Название | Параметры                      |
+| Name | Parameters                      |
 |----------|--------------------------------|
-| status   | APPROVED - успешно,            |
-|          | DECLINED - операция не успешна |
-| code     | Код ответа                     |
+| status   | APPROVED - successfully,            |
+|          | DECLINED - operation failed |
+| code     | Response code                     |
 
 ## Verify Operation
 
-Для пополнения карты необходимо отправить переадресовать пользователя на страницу платежного шлюза  методом POST со следующими параметрами:
+To replenish the card, you must send the user redirect to the payment gateway page using the POST method with the following parameters:
 
-| Имя параметра | Описание                                                                                                                                                                                    | Тип     |
+| Parameter | Description                                                                                                                                                                                    | Тип     |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| operation     | тип операции “Verify”                                                                                                                                                                       | String  |
-| merchant_id   | идентификатор мерчанта                                                                                                                                                                      | String  |
-| order_id      | Это уникальный номер операции. Генерируется на стороне мерчанта. Он должен быть уникальным на протяжении всей работы.                                                                       | Integer |
-| approve_url   | URL на который будет перенаправлен пользователь в случае успешной операции                                                                                                                  | String  |
-| decline_url   | URL на который будет перенаправлен пользователь в случае не успешной операции                                                                                                               | String  |
-| cancel_url    | URL на который будет перенаправлен пользователь в случае отмены операции                                                                                                                    | String  |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                                    | String  |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,approve_url,decline_url,cancel_url разделенных “;” (точка с запятой) в кодировке UTF-8. |         |
-|               | **Порядок параметров при конкатенации важен!**                                                                                                                                                  |         |
+| operation     | operation type “Verify”                                                                                                                                                                    | String  |
+| merchant_id   | merchant identifier                                                                                                                                                                      | String  |
+| order_id      | This is a unique transaction number. It is generated on the side of the merchant. It must be unique throughout the work.                                                                       | Integer |
+| approve_url   | URL to which the user will be redirected in case of a successful operation                                                                                                                  | String  |
+| decline_url   | URL to which the user will be redirected in case of unsuccessful operation                                                                                                              | String  |
+| cancel_url    | URL to which the user will be redirected if the operation is canceled                                                                                                                    | String  |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                                    | String  |
+|               | The string subject to HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, approve_url, decline_url, cancel_url separated by “;” (semicolon) in UTF-8 encoding. |         |
+|               |  **The order of parameters during concatenation is important!**                                                                                                                                                        |         |
 
 ## Operation Reversal
-Для проверки статуса платежа или верификации карты необходимо отправить POST запрос на url https://pay.concord.ua/api/reversal со следующими параметрами:
 
-| Имя параметра | Описание                                                                                                                                                 | Тип     |
+To check the payment status or verify the card, you must send a POST request to url https://pay.concord.ua/api/reversal with the following parameters:
+
+| Parameter | Description                                                                                                                                                 | Тип     |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| merchant_id   | идентификатор мерчанта                                                                                                                                   | String  |
-| order_id      | Это уникальный номер операции которая была отправлена в запросе P2PCredit,P2PDebit или Verify                                                            | Integer |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца. | String  |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров $merchant_id,$order_id разделенных “;” (точка с запятой) в кодировке UTF-8.      |         |
-|               | Порядок параметров при конкатенации важен!                                                                                                               |         |
+| merchant_id   | merchant identifier                                                                                                                                  | String  |
+| order_id      | This is a unique transaction number that was sent in a P2PCredit, P2PDebit or Verify request.                                                           | Integer |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant. | String  |
+|               | The string to be HMAC_MD5 is generated by concatenating the parameters $ merchant_id, $ order_id separated by “;” (semicolon) in UTF-8 encoding.      |         |
+|               | The order of parameters during concatenation is important!                                                                                                               |         |
 
-В ответ возвращается JSON со следующими параметрами:
+JSON is returned in response with the following parameters:
 
-| Имя параметра | Описание                                   | Тип     |
+| Parameter | Description                                    | c     |
 |---------------|--------------------------------------------|---------|
-| code          | Код ответа. (Список кодов ответа см. ниже) | Integer |
-| message       | Текстовое сообщение с результатом запроса  | String  |
+| code          |Response code. (See below for a list of response codes) | Integer |
+| message       | Text message with query result  | String  |
 
 ## Operation Complete
-Для проверки статуса платежа или верификации карты необходимо отправить POST запрос на url https://pay.concord.ua/api со следующими параметрами:
+To check the payment status or verify the card, you must send a POST request to url https://pay.concord.ua/api with the following parameters:
 
-| Имя параметра | Описание                                                                                                                                                     | Тип     |
+| Parameter | Description                                                                                                                                                     | Type     |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| merchant_id   | идентификатор мерчанта                                                                                                                                       | String  |
+| merchant_id   |  merchant identifier                                                                                                                                        | String  |
 | operation     | Complete                                                                                                                                                     | String  |
-| order_id      | Это уникальный номер операции которая была отправлена в запросе Purchase                                                                                     | Integer |
-| amount        | Сумма списания                                                                                                                                               |  float  |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.     | String  |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров $merchant_id,$order_id ,$amount разделенных “;” (точка с запятой) в кодировке UTF-8. |         |
-|               | Порядок параметров при конкатенации важен!                                                                                                                   |         |
+| order_id      | This is the unique transaction number that was sent in the purchase request.                                                                                    | Integer |
+| amount        | Charged Amount                                                                                                                                             |  float  |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.     | String  |
+|               | The string to be HMAC_MD5 is generated by concatenating the parameters $merchant_id, $order_id, $ amount separated by “;” (semicolon) in UTF-8 encoding. |         |
+|               | **The order of parameters during concatenation is important!**                                                                                                                  |         |
 
-В ответ возвращается JSON со следующими параметрами:
 
-| Имя параметра | Описание                                   | Тип     |
+JSON is returned in response with the following parameters:
+
+| Parameter | Description                                   | Type     |
 |---------------|--------------------------------------------|---------|
-| code          | Код ответа. (Список кодов ответа см. ниже) | Integer |
-| message       | Текстовое сообщение с результатом запроса  | String  |
+| code          | Response code. (See below for a list of response codes) | Integer |
+| message       | Text message with query result  | String  |
 
 
 ## Operation Check
 
-Для проверки статуса платежа или верификации карты необходимо отправить POST запрос на  url https://pay.concord.ua/api/check со следующими параметрами:
+To check the payment status or verify the card, you must send a POST request to url https://pay.concord.ua/api/check with the following parameters:
 
-| Имя параметра | Описание                                                                                                                                                 | Тип     |
+| Parameter | Description                                                                                                                                                 | Type     |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| merchant_id   | идентификатор мерчанта                                                                                                                                   | String  |
-| order_id      | Это уникальный номер операции которая была отправлена в запросе P2PCredit,P2PDebit или Verify                                                            | Integer |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца. | String  |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров $merchant_id,$order_id разделенных “;” (точка с запятой) в кодировке UTF-8.      |         |
-|               | Порядок параметров при конкатенации важен!                                                                                                               |         |
+| merchant_id   |  merchant identifier                                                                                                                                    | String  |
+| order_id      | This is a unique transaction number that was sent in a P2PCredit, P2PDebit or Verify request.                                                            | Integer |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant. | String  |
+|               | The string to be HMAC_MD5 is generated by concatenating the parameters $merchant_id, $order_id separated by “;” (semicolon) in UTF-8 encoding.      |         |
+|               | **The order of parameters during concatenation is important!**                                                                                                                |         |
 
+JSON is returned in response with the following parameters:
 
-В ответ возвращается JSON со следующими параметрами:
-
-| Имя параметра     | Описание                                   | Тип        |
+| Parameter    | Description                                   | Type        |
 |-------------------|--------------------------------------------|------------|
-| reasoneCode       | Код ответа. (Список кодов ответа см. ниже) | Integer    |
-| reason            | Описание ответа                            | String     |
-| merchantAccount   | мерчант                                    | String     |
-| amount            | Сумма                                      | String     |
-| phone             | Номер телефона                             | String     |
-| createdDate       | дата платежа                               | String     |
-| cardPan           | Маскированный номер карты                  | String     |
-| cardType          | Тип карты                                  | String     |
-| transactionId     | Идентификатор транзакции                   | BigInteger |
-| message           | Текстовое сообщение с результатом запроса  | String     |
-| datetime          | Дата создания операции на сервере          | String     |
-| fee               | Комиссия платежа                           | Double     |
-| transactionStatus | Статус операции(Справочник см ниже)        | String     |
+| reasoneCode       | Response code. (See below for a list of response codes) | Integer    |
+| reason            | Answer Description                            | String     |
+| merchantAccount   | merchant                                   | String     |
+| amount            | Amount                                      | String     |
+| phone             | Phone number                            | String     |
+| createdDate       | payment date                               | String     |
+| cardPan           | Masked card number                  | String     |
+| cardType          | Card type                                  | String     |
+| transactionId     | Transaction ID                  | BigInteger |
+| message           | Text message with query result  | String     |
+| datetime          | Server creation date          | String     |
+| fee               | Payment commission                           | Double     |
+| transactionStatus | Operation Status (Reference see below)        | String     |
 
 ## Operation P2PCredit
 
-Для пополнения карты необходимо отправить POST запрос со следующими параметрами:
+To replenish the card, you must send a POST request with the following parameters:
 
-| Имя параметра | Описание                                                                                                                                                                             | Тип    |
+| Parameter | Description                                                                                                                                                                             | Type    |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| operation     | тип операции “P2PCredit”                                                                                                                                                             | String |
-| merchant_id   | идентификатор мерчанта                                                                                                                                                               | String |
-| order_id      | Это уникальный номер операции. Генерируется на стороне мерчанта. Он должен быть уникальным на протяжении всей работы.                                                                | String |
-| amount        | Сумма операции, должна быть дробным числом, c двумя знаками после запятой. Пример: 100.50                                                                                            | Double |
-| card_number   | Номер карты получателя.                                                                                                                                                              | String |
-| token         | Токен, можно использовать вместо карты получателя                                                                                                                                    | String |
-| currency_iso  | Валюта операции. На данный момент доступна только “UAH”                                                                                                                              | String |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                             | String |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров $merchant_id,$order_id,$amount,card_number,currency_iso разделенных “;” (точка с запятой) в кодировке UTF-8. |        |
-|               | Порядок параметров при конкатенации важен!                                                                                                                                           |        |
+| operation     | transaction type “P2PCredit”                                                                                                                                                             | String |
+| merchant_id   |  merchant identifier                                                                                                                                                                | String |
+| order_id      | This is a unique transaction number. It is generated on the side of the merchant. It must be unique throughout the work.                                                                | String |
+| amount        | The sum of the operation must be a fractional number, with two decimal places. Example: 100.50                                                                                           | Double |
+| card_number   | Recipient card number.                                                                                                                                                              | String |
+| token         | Token, can be used instead of the recipient card                                                                                                                                    | String |
+| currency_iso  | Transaction currency. Currently only “UAH” is available                                                                                                                              | String |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                             | String |
+|               | The string subject to HMAC_MD5 is generated by concatenating the parameters $ merchant_id, $ order_id, $ amount, card_number, currency_iso separated by “;” (semicolon) in UTF-8 encoding. |        |
+|               |  **The order of parameters during concatenation is important!**                                                                                                                                          |        |
 
-В ответ возвращается JSON со следующими параметрами:
+JSON is returned in response with the following parameters:
 
-| Имя параметра | Описание                                                                              | Тип     |
+| Parameter | Description                                                                              | Type     |
 |---------------|---------------------------------------------------------------------------------------|---------|
-| code          | Код ответа. (Список кодов ответа см. ниже Коды ответа P2PCredit)                      | Integer |
-| message       | Текстовое сообщение с результатом запроса                                             | String  |
-| status        | Статусы операции                                                                      | String  |
-|               | APPROVED - перевод успешен                                                            |         |
-|               | DECLINED - Перевод не успешен                                                         |         |
-|               | ON-PAYMENT - Заявка на перевод в обработке, необходимо дополнительно запросить статус |         |
-| transactionID | Идентификатор транзакции в платежной системе                                          | Integer |
-| approvalCode  | Код авторизации                                                                       | Integer |
+| code          | Response code. (For a list of response codes, see P2PCredit response codes below)                     | Integer |
+| message       | Text message with query result                                             | String  |
+| status        | Transaction Statuses                                                                     | String  |
+|               | APPROVED - translation successful                                                            |         |
+|               | DECLINED - Translation failed                                                         |         |
+|               | ON-PAYMENT - An application for transfer is being processed, it is necessary to request an additional status |         |
+| transactionID | Transaction ID in the payment system                                          | Integer |
+| approvalCode  | Authorization code                                                                      | Integer |
 
 ## Get Balance Operation (GetBalance)
 
-Для пополнения карты необходимо отправить POST на url  https://pay.concord.ua/api/balance запрос со следующими параметрами:
-| Имя параметра | Описание                                                                                                                                                 | Тип    |
+To replenish the card, you must send a POST to the url https://pay.concord.ua/api/balance request with the following parameters:
+
+| Parameter | Description                                                                                                                                                 | Type    |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| operation     | тип операции “GetBalance”                                                                                                                                | String |
-| merchant_id   | идентификатор мерчанта                                                                                                                                   | String |
-| date          | Дата и время запроса в произвольном формате                                                                                                              | String |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца. | String |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров $merchant_id,$data  разделенных “;” (точка с запятой) в кодировке UTF-8.         |        |
-|               | Порядок параметров при конкатенации важен!                                                                                                               |        |
+| operation     | operation type “GetBalance”                                                                                                                            | String |
+| merchant_id   | merchant identifier                                                                                                                                    | String |
+| date          | Date and time of request in any format                                                                                                              | String |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant. | String |
+|               | The string to be HMAC_MD5 is generated by concatenating the parameters $merchant_id, $data separated by “;” (semicolon) in UTF-8 encoding.         |        |
+|               |  **The order of parameters during concatenation is important!**                                                                                                               |        |
 
-В ответ возвращается JSON со следующими параметрами:
+JSON is returned in response with the following parameters:
 
-| Имя параметра  | Описание                     | Тип   |
+| Parameter  | Description                     | Type   |
 |----------------|------------------------------|-------|
-| mk_deposit     | Лимит Mastercard             | Float |
-| visa_deposit   | Лимит Visa                   | Float |
-| mk_available   | Доступный остаток Mastercard | Float |
-| visa_available | Доступный остаток Visa       | Float |
+| mk_deposit     | Mastercard Limit            | Float |
+| visa_deposit   | Visa Limit                  | Float |
+| mk_available   | Available Balance Mastercard | Float |
+| visa_available | Available Visa Balance       | Float |
 
 ## Operation P2PDebit
-Для списания средств с карты необходимо переадресовать пользователя на страницу платежного шлюза  методом POST со следующими параметрами:
 
-| Имя параметра | Описание                                                                                                                                                                                                             | Тип     |
+
+To debit funds from the card, you must redirect the user to the payment gateway page using the POST method with the following parameters:
+
+| Parameter | Description                                                                                                                                                                                                             | Type     |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| operation     | тип операции “P2PDebit”                                                                                                                                                                                              | String  |
-| merchant_id   | идентификатор мерчанта                                                                                                                                                                                               | String  |
-| order_id      | Это уникальный номер операции. Генерируется на стороне мерчанта. Он должен быть уникальным на протяжении всей работы.                                                                                                | Integer |
-| amount        | Сумма операции, должна быть дробным числом, c двумя знаками после запятой. Пример: 100.50                                                                                                                            | Double  |
-| currency_iso  | Валюта операции. На данный момент доступна только “UAH”                                                                                                                                                              | String  |
-| description   | Назначение платежа                                                                                                                                                                                                   | String  |
-| approve_url   | URL на который будет перенаправлен пользователь в случае успешной операции                                                                                                                                           | String  |
-| decline_url   | URL на который будет перенаправлен пользователь в случае не успешной операции                                                                                                                                        | String  |
-| cancel_url    | URL на который будет перенаправлен пользователь в случае отмены операции                                                                                                                                             | String  |
-| signature     | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                                                             | String  |
-|               | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,currency_iso,description,approve_url,decline_url,cancel_url разделенных “;” (точка с запятой) в кодировке UTF-8. |         |
-|               | Порядок параметров при конкатенации важен!                                                                                                                                                                           |         |
+| operation     | operation type “P2PDebit”                                                                                                                                                                                             | String  |
+| merchant_id   | merchant identifier                                                                                                                                                                                               | String  |
+| order_id      | This is a unique transaction number. It is generated on the side of the merchant. It must be unique throughout the work.                                                                                                | Integer |
+| amount        | The sum of the operation must be a fractional number, with two decimal places. Example: 100.50                                                                                                                            | Double  |
+| currency_iso  | Transaction currency. Currently only “UAH” is available                                                                                                                                                              | String  |
+| description   | Purpose of payment                                                                                                                                                                                                  | String  |
+| approve_url   | URL to which the user will be redirected in case of a successful operation                                                                                                                                           | String  |
+| decline_url   | URL to which the user will be redirected in case of unsuccessful operation                                                                                                                                       | String  |
+| cancel_url    | URL to which the user will be redirected if the operation is canceled                                                                                                                                            | String  |
+| signature     | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                                                           | String  |
+|               | The string subject to HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, currency_iso, description, approve_url, decline_url, cancel_url separated by “;” (semicolon) in UTF-8 encoding. |         |
+|               | **The order of parameters during concatenation is important!**                                                                                                                                                                                |         |
 
 ## Operation PurchaseOnMerchant
-Для оплаты на платежной странице мерчанта необходимо отправить  POST запрос со следующими данными данными.
+
+To pay on the merchant’s payment page, you must send a POST request with the following data.
 
 
 **Production url:**   https://pay.concord.ua/api/
 
+POST parameters:
 
-POST параметры:
-
-|                |                                                                                                                                                                                   |                    |
+|  Parameter     | Description                                                                                                                                           |           Value         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| Параметр       | Описание                                                                                                                                                                          | Значение           |
-| operation      | Тип операции                                                                                                                                                                      | PurchaseOnMerchant |
-| merchant_id    | ID мерчанта, выдается поцесcингом                                                                                                                                                 |                    |
-| amount         | Сумма операции. Пример 500.00                                                                                                                                                     |                    |
-| signature      | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                          |                    |
-|                | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,currency_iso,description разделенных “;” (точка с запятой) в кодировке UTF-8. |                    |
-|                | Порядок параметров при конкатенации важен!                                                                                                                                        |                    |
-| order_id       | Уникальный номер операции на стороне торговца. Если операция дублируется - торговец получает ошибку.                                                                              |                    |
-| currency_iso   | Валюта платежа.                                                                                                                                                                   | UAH                |
-| description    | Назначение платежа. Выводится на платежной странице, при вводе платежных реквизитов. Отображается в выписке по счету и реестрах                                                   |                    |
-| add_params     | Массив с дополнительными параметрами. Дополнительные параметры потом возвращаются мерчанту в callback вызове                                                                      |                    |
-| token          | Токен для списания с карты без передачи реквизитов карты                                                                                                                          |                    |
-| card_num       | Номер карты                                                                                                                                                                       |                    |
-| card_exp_month | Срок действия карты MM                                                                                                                                                            |                    |
-| card_exp_year  | Срок действия карты  YY                                                                                                                                                           |                    |
-| card_cvv       | CVV2 код, в случае операции без CVV необходимо указать -1                                                                                                                         |                    |
-| card_holder    | Владелец карты.  Не обязательное поле                                                                                                                                             |                    |
-| phone          | Номер телефона клиента. Не обязательное поле                                                                                                                                      |                    |
-| payment_type   | Тип платежа.                                                                                                                                                                      |                    |
-|                | Purchase - покупка                                                                                                                                                                |                    |
-|                | PreAuth - блокирование средств на карте                                                                                                                                           |                    |
-| secure_type    | Тип прохождения безопасности транзакции                                                                                                                                           |                    |
-|                |  Может принимать следующие значения:                                                                                                                                              |                    |
+| operation      | Type of transaction                                                                                                                                                                      | PurchaseOnMerchant |
+| merchant_id    |  merchant identifier                                                                                                                                                  |                    |
+| amount         | The amount of the transaction. Example 500.00                                                                                                                                                     |                    |
+| signature      | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                          |                    |
+|                | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, currency_iso, description separated by “;” (semicolon) in UTF-8 encoding. |                    |
+|                | The order of parameters during concatenation is important!                                                                                                                                        |                    |
+| order_id       | Unique transaction number on the merchant side. If the operation is duplicated, the merchant receives an error.                                                                              |                    |
+| currency_iso   | Currency of payment.                                                                                                                                                                   | UAH                |
+| description    | Purpose of payment. It is displayed on the payment page when entering payment details. Displayed in the account statement and registries                                                  |                    |
+| add_params     | An array with additional parameters. Additional parameters are then returned to the merchant in a callback call                                                                     |                    |
+| token          | Token for debiting from a card without transferring card details                                                                                                                          |                    |
+| card_num       | Card number                                                                                                                                                                       |                    |
+| card_exp_month | Validity of MM card                                                                                                                                                            |                    |
+| card_exp_year  | YY card expiration date                                                                                                                                                           |                    |
+| card_cvv       | CVV2 code, in case of operation without CVV you must specify -1                                                                                                                         |                    |
+| card_holder    | Cardowner. Optional field                                                                                                                                             |                    |
+| phone          | Customer Phone Number Optional field                                                                                                                                      |                    |
+| payment_type   | Type of payment.                                                                                                                                                                      |                    |
+|                | Purchase - purchase                                                                                                                                                                |                    |
+|                | PreAuth - blocking funds on the card                                                                                                                                           |                    |
+| secure_type    | Transaction Security Pass Type                                                                                                                                           |                    |
+|                | It can take the following values:                                                                                                                                              |                    |
 |                | Auto                                                                                                                                                                              |                    |
 |                | 3DS                                                                                                                                                                               |                    |
 |                | Non3DS                                                                                                                                                                            |                    |
-| callback_url   | URL на который прийдет информация о результате выполнения платежа                                                                                                                 |                    |
+| callback_url   | URL to which information about the result of the payment will come      |                    |
 
-Ответ:
 
-|                 |                                                                              |                              |
+Answer:
+
+|       Описание          |         Description                                                  |          Value                    |
 |-----------------|------------------------------------------------------------------------------|------------------------------|
-| Параметр        | Описание                                                                     | Значение                     |
-| status          | Статус платежа                                                               | справочник “Статусы платежа” |
-| code            | Код ответа                                                                   | Справочник “Коды ответов”    |
-| order_id        | Уникальный номер заказа в системе торговца                                   |                              |
-| amount          | Сумма платежа                                                                |                              |
-| fee             | Комиссия                                                                     |                              |
-| currency        | Валюта платежа                                                               |                              |
-| token           | Токен для последующих оплат. Токен вернется в случае, если платеж успешен    |                              |
-| d3_acs_url      | URL acs сервера на который необходимо отправить пользователя для верификации |                              |
-| d3_md           | Уникальный идентификатор который необходимо передать на ACS сервер           |                              |
-| d3_pareq        | Запрос который необходимо передать на ACS сервер                             |                              |
-| transaction_key | Ключ транзакции, который необходимо использовать для подтверждения платежа   |                              |
-| transaction_id  | Идентификатор транзакции                                                     |                              |
+| status          | Payment status                                                               | reference “Payment statuses” |
+| code            | Response code                                                                   | Reference “Response Codes”    |
+| order_id        | Unique order number in the merchant system                                   |                              |
+| amount          | Amount of payment                                                                |                              |
+| fee             | Commission                                                                     |                              |
+| currency        | Payment currency                                                               |                              |
+| token           | Token for subsequent payments. Token will be returned if payment is successful    |                              |
+| d3_acs_url      | Acs URL of the server to which the user must be sent for verification |                              |
+| d3_md           | The unique identifier that must be transmitted to the ACS server           |                              |
+| d3_pareq        | Request to transfer to ACS server                             |                              |
+| transaction_key | Transaction key that must be used to confirm payment   |                              |
+| transaction_id  | Transaction ID                                                     |                              |
 | signature       |                                                                              |                              |
 
-Если в ответе code пришло значение 2001 необходимо провести проверку 3DS.
+If the response code returns 2001, a 3DS check is required.
 
-Для проверки 3ds необходимо методом POST отправить форму с параметрами d3_md, d3_pareq, term_url  на d3_acs_url.
+To verify 3ds, you must use the POST method to send a form with the parameters d3_md, d3_pareq, term_url to d3_acs_url.
 
 
-term_url - url на который вернется результат проверки 3DS.
+
+term_url - url to which the 3DS check result will return.
 
 ``` html
 <form name="MPIform" action='${d3_acs_url}' method="POST">
@@ -332,123 +333,125 @@ term_url - url на который вернется результат пров�
 ## Getting a token for Masterpass
 **Production url:**  https://pay.concord.ua/api/mptoken
 
-Для получения гостевого токена необходимо отправить  POST запрос со следующими данными данными.
-| Параметр  | Описание                                                             |
+To receive a guest token, you must send a POST request with the following data.
+
+| Parameter  | Description                                                             |
 |-----------|----------------------------------------------------------------------|
-| msisdn    | Номер телефона для входа в кошелек Masterpass в формате 380XXXXXXXXX |
-| client_id | Идентификатор клиента в системе MasterPass                           |
+| msisdn    | Masterpass wallet phone number in format 380XXXXXXXXX |
+| client_id | Customer ID in MasterPass                         |
 
 
-В ответ приходит объект в формате JSON со следующими параметрами:
+The response comes in an object in JSON format with the following parameters:
 
-| Параметр     | Описание                            |
+| Parameter     | Description                            |
 |--------------|-------------------------------------|
-| res          | Результат запроса 0 - все ок        |
-| msg          | Сообщение об ошибке                 |
-| token        | Токен для передачи в mfs библиотеку |
-| reference_no | Уникальный номер запроса            |
+| res          | Query result 0 - everything is ok       |
+| msg          | Error message                 |
+| token        | Token for transferring to the mfs library |
+| reference_no | Unique Request Number            |
 
 ## Making a payment through Masterpass
 **Production url:**  https://pay.concord.ua/api
 
-Для получения гостевого токена необходимо отправить  POST запрос со следующими данными данными.
-| Параметр               | Описание                                                                                                                                                                          | Значение           |
+To receive a guest token, you must send a POST request with the following data.
+
+| Parameter               | Description                                                                                                                                                                          | Value           |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| operation              | Тип операции                                                                                                                                                                      | PurchaseMasterpass |
-| merchant_id            | Идентификатор мерчанта                                                                                                                                                            |                    |
-| amount                 | Сумма платежа в формате 1.00                                                                                                                                                      |                    |
+| operation              | Type of transaction                                                                                                                                                                    | PurchaseMasterpass |
+| merchant_id            | merchant identifier                                                                                                                                                             |                    |
+| amount                 | Amount of payment in the format 1.00                                                                                                                                                      |                    |
 | order_id               |                                                                                                                                                                                   |                    |
-| currency_iso           | Валюта                                                                                                                                                                            | UAH                |
-| description            | Описание плаатежа                                                                                                                                                                 |                    |
-| approve_url            | URL для переадресации после успешного платежа (в случае подтверждения 3DS на странице ConcordPay)                                                                                 |                    |
-| decline_url            | URL для переадресации после не успешного платежа (в случае подтверждения 3DS на странице ConcordPay)                                                                              |                    |
-| cancel_url             | URL для переадресации после отмены платежа (в случае подтверждения 3DS на странице ConcordPay)                                                                                    |                    |
-| callback_url           | URL на который будет отправлен callback о статусе платежа                                                                                                                         |                    |
-| add_params[wallet]     | Признак кошелька                                                                                                                                                                  | masterpass         |
-| add_params[msisdn]     | Номер телефона для входаа в кошелек Masterpass в формате 380XXXXXXXXX                                                                                                             |                    |
-| add_params[token]      | Токен полученный с сервера  MasterPass                                                                                                                                            |                    |
-| add_params[card_name]  | Alias карты полученный с сервера MasterPass                                                                                                                                       |                    |
-| add_params[client_id]  | Идентификатор мерчанта в системе MasterPass                                                                                                                                       |                    |
-| add_params[ret_ref_no] | Уникальный номер транзакции полученный с сервера MasterPass                                                                                                                       |                    |
-| signature              | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                          |                    |
-|                        | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,currency_iso,description разделенных “;” (точка с запятой) в кодировке UTF-8. |                    |
-|                        | Порядок параметров при конкатенации важен!                                                                                                                                        |                    |
+| currency_iso           | Currency                                                                                                                                                                            | UAH                |
+| description            | Payment Description                                                                                                                                                                 |                    |
+| approve_url            | Redirect URL after successful payment (in case of 3DS confirmation on the ConcordPay page)                                                                                 |                    |
+| decline_url            | Redirect URL after a failed payment (in case of 3DS confirmation on the ConcordPay page)                                                                              |                    |
+| cancel_url             | Redirect URL after cancellation of payment (in case of 3DS confirmation on the ConcordPay page)                                                                                    |                    |
+| callback_url           | URL to which callback about payment status will be sent                                                                                                                        |                    |
+| add_params[wallet]     | Wallet sign                                                                                                                                                                  | masterpass         |
+| add_params[msisdn]     | Masterpass wallet phone number in 380XXXXXXXXX format                                                                                                             |                    |
+| add_params[token]      | Token received from MasterPass server                                                                                                                                            |                    |
+| add_params[card_name]  | Alias ​​cards received from MasterPass server                                                                                                                                       |                    |
+| add_params[client_id]  | Merchant ID in MasterPass                                                                                                                                       |                    |
+| add_params[ret_ref_no] | Unique transaction number received from MasterPass server                                                                                                                       |                    |
+| signature              | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                          |                    |
+|                        | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, currency_iso, description separated by “;” (semicolon) in UTF-8 encoding. |                    |
+|                        |  **The order of parameters during concatenation is important!**                                                                                                                                          |                    |
 
 
-В ответ приходит объект в формате JSON со следующими параметрами:
+The response comes in an object in JSON format with the following parameters:
 
+If a transaction requires 3DS confirmation:
 
-Если транзакция требует подтверждения 3DS:
-
-| Параметр        | Описание                                                                                                                                                                                                                                      |
+| Parameter        | Description                                                                                                                                                                                                                                      |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| code            | Код ответа                                                                                                                                                                                                                                    |
-| status          | Статус транзакции, если необходима проверка 3DS , в статусе , будет значение 3ds                                                                                                                                                              |
-| d3AcsUrl        | url для перенаправления клиента, для проверки 3ds                                                                                                                                                                                             |
-| d3Md            | Криптограмма для передачи на хост 3DS                                                                                                                                                                                                         |
-| d3Pareq         | Запрос для передачи на хост 3DS                                                                                                                                                                                                               |
-| transaction_key | Ключ транзакции для подтверждения 3DS                                                                                                                                                                                                         |
-| TermUrl         | Url для переадресации после вводе кода подтверждения на странице 3DS. По умолчанию url на страницу ConcordPay,  для проверки 3DS можно указать свой URL, тогда после прохождения 3DS необходимо вызвать метод “Подтверждение 3DS верификации” |
+| code            | Response code                                                                                                                                                                                                                                    |
+| status          | Transaction status, if 3DS verification is required, the status will be 3ds                                                                                                                                                              |
+| d3AcsUrl        | url to redirect client to check 3ds                                                                                                                                                                                             |
+| d3Md            | Cryptogram for transferring to a 3DS host                                                                                                                                                                                                         |
+| d3Pareq         | Request to transfer to 3DS host                                                                                                                                                                                                               |
+| transaction_key | 3DS transaction key                                                                                                                                                                                                         |
+| TermUrl         | Url to redirect after entering the verification code on the 3DS page. By default, the url to the ConcordPay page, you can specify your URL to check 3DS, then after passing 3DS you need to call the “Confirm 3DS Verification” method |
 
 ## The confirmation of 3DS Verification Verification
-Для оплаты на платежной странице мерчанта необходимо отправить  POST запрос со следующими данными данными.
+To pay on the merchant’s payment page, you must send a POST request with the following data.
 
 
 **Production url:**   https://pay.concord.ua/api/
 
-| Параметр        | Описание                                                                                                                                                                    | Значение    |
+| Parameter        | Description                                                                                                                                                                    | Value    |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| operation       | Тип операции                                                                                                                                                                | Complete3DS |
-| transaction_key | Ключ транзакции                                                                                                                                                             |             |
-| merchant_id     | Идентификатор мерчанта                                                                                                                                                      |             |
-| d3ds_md         | Идентификатор полученный после редиректа с сервера ACS                                                                                                                      |             |
-| d3ds_pares      | Сообщение полученное после редиректа с сервера ACS                                                                                                                          |             |
-| signature       | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                    |             |
-|                 | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,transaction_key,d3ds_md,d3ds_pares разделенных “;” (точка с запятой) в кодировке UTF-8. |             |
-|                 | Порядок параметров при конкатенации важен!                                                                                                                                  |             |
+| operation       | Type of transaction                                                                                                                                                                | Complete3DS |
+| transaction_key | Transaction key                                                                                                                                                            |             |
+| merchant_id     | merchant identifier                                                                                                                                                       |             |
+| d3ds_md         | ID received after redirect from ACS server                                                                                                                      |             |
+| d3ds_pares      | Message received after redirect from ACS server                                                                                                                          |             |
+| signature       | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                    |             |
+|                 | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, transaction_key, d3ds_md, d3ds_pares separated by “;” (semicolon) in UTF-8 encoding. |             |
+|                 |  **The order of parameters during concatenation is important!**                                                                                                                                     |             |
 
-Ответ
-| Параметр       | Описание                                   | Значение                     |
+Answer:
+
+| Parameter       | Description                                   | Value                     |
 |----------------|--------------------------------------------|------------------------------|
-| status         | Статус платежа                             | справочник “Статусы платежа” |
-| code           | Код ответа                                 | Справочник “Коды ответов”    |
-| order_id       | Уникальный номер заказа в системе торговца |                              |
-| amount         | Сумма платежа                              |                              |
-| fee            | Комиссия                                   |                              |
-| currency       | Валюта платежа                             |                              |
-| card_pan       | Маскированный номер карты                  |                              |
-| transaction_id | Идентификатор транзакции                   |                              |
+| status         | Payment status                             | reference “Payment statuses”|
+| code           | Response code                                 | Reference “Response Codes”   |
+| order_id       | Unique order number in the merchant system |                              |
+| amount         | Amount of payment                              |                              |
+| fee            | Commission                                   |                              |
+| currency       | Payment currency                             |                              |
+| card_pan       | Masked card number                  |                              |
+| transaction_id | Transaction ID                   |                              |
 
 ## Payment on the payment splitting processing page
 
-Для оплаты на платежной странице процессинга необходимо выполнить редирект на страницу процессингово центра, с  POST данными.
+
+To pay on the payment processing page, you need to redirect to the page of the processing center, with POST data.
 
 **Production url:**   https://pay.concord.ua/api/
 
-POST параметры:
+POST parameters:
 
-|              |                                                                                                                                                                                                                   |                   |
+|          Parameter         |                                     Description          |       Value            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| Параметр     | Описание                                                                                                                                                                                                          | Значение          |
-| operation    | Тип операции                                                                                                                                                                                                      | Purchase          |
-| merchant_id  | ID мерчанта, выдается поцесcингом                                                                                                                                                                                 |                   |
-| amount       | Сумма операции. Пример 500.00                                                                                                                                                                                     |                   |
-| signature    | В целях подтверждения валидности данных должна быть сгенерирована и передана в запросе HMAC_MD5 контрольная подпись с использованием SecretKey торговца.                                                          |                   |
-|              | Строка, подлежащая HMAC_MD5, генерируется путем конкатенации параметров merchant_id,order_id,amount,currency_iso,description разделенных “;” (точка с запятой) в кодировке UTF-8.                                 |                   |
-|              | Порядок параметров при конкатенации важен!                                                                                                                                                                        |                   |
-| order_id     | Уникальный номер операции на стороне торговца. Если операция дублируется - торговец получает ошибку.                                                                                                              |                   |
-| currency_iso | Валюта платежа.                                                                                                                                                                                                   | UAH               |
-| description  | Назначение платежа. Выводится на платежной странице, при вводе платежных реквизитов. Отображается в выписке по счету и реестрах                                                                                   |                   |
-| add_params   | Массив с дополнительными параметрами. Дополнительные параметры потом возвращаются мерчанту в callback вызове                                                                                                      |                   |
-| split        | Признак расщепления платежа                                                                                                                                                                                       | 0 - не расщеплять |
+| operation    | Type of transaction                                                                                                                                                                                                      | Purchase          |
+| merchant_id  | merchant identifier                                                                                                                                                                                 |                   |
+| amount       | The amount of the transaction. Example 500.00                                                                                                                                                                                    |                   |
+| signature    | In order to confirm the validity of the data, a verification signature must be generated and transmitted in the HMAC_MD5 request using the SecretKey merchant.                                                          |                   |
+|              | The string to be HMAC_MD5 is generated by concatenating the parameters merchant_id, order_id, amount, currency_iso, description separated by “;” (semicolon) in UTF-8 encoding.                                 |                   |
+|              | The order of parameters during concatenation is important!                                                                                                                                                                        |                   |
+| order_id     | Unique transaction number on the merchant side. If the operation is duplicated, the merchant receives an error.                                                                                                              |                   |
+| currency_iso | Currency of payment.                                                                                                                                                                                                   | UAH               |
+| description  | Purpose of payment. It is displayed on the payment page when entering payment details. Displayed in the account statement and registries                                                                                  |                   |
+| add_params   | An array with additional parameters. Additional parameters are then returned to the merchant in a callback call                                                                                                      |                   |
+| split        | Sign of payment splitting                                                                                                                                                                                       | 0 - не расщеплять |
 |              |                                                                                                                                                                                                                   | 1 -  расщеплять   |
-| split_rules  | Массив с правилами расщепления который содержит в себе идентификаторы субмерчанта и суммы.                                                                                                                        |                   |
-|              | Сумма расщеплений должна совпадать с суммой платежа.                                                                                                                                                              |                   |
-|              | Пример:                                                                                                                                                                                                           |                   |
+| split_rules  | An array with splitting rules that contains the identifiers of the submerchant and amount.                                                                                                                        |                   |
+|              | The amount of splits must match the amount of payment.                                                                                                                                                              |                   |
+|              | Example:                                                                                                                                                                                                           |                   |
 |              | split_rules[0][sub_merchant_id]=test1&split_rules[0][amount]=100.00&split_rules[1][sub_merchant_id]=test2&split_rules[1][amount]=50.00&.......&split_rules[n][sub_merchant_id]=testn&split_rules[n][amount]=10.00 |                   |
-| approve_url  | URL для переадресации в случае, если платеж успешен                                                                                                                                                               |                   |
-| decline_url  | URL для переадресации в случае, если платеж не успешен                                                                                                                                                            |                   |
-| cancel_url   | URL для переадресации в случае, если пользователь отказался совершить оплату                                                                                                                                      |                   |
-| callback_url | URL на который прийдет информация о результате выполнения платежа                                                                                                                                                 |                   |
+| approve_url  | Redirect URL in case payment is successful                                                                                                                                                              |                   |
+| decline_url  | Redirect URL in case payment is unsuccessful                                                                                                                                                          |                   |
+| cancel_url   | Redirect URL in case the user refuses to make a payment                                                                                                                                      |                   |
+| callback_url | URL to which information about the result of the payment will come                                                                                                                                                 |                   |
 
 
