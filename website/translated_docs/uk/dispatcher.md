@@ -1,6 +1,6 @@
 ---
 id: dispatcher
-title: Specification for the interaction of the merchant with the Dispatcher ver 1.1 software.
+title: Specification for the interaction of the merchant with the Dispatcher software.
 ---
 
 ## Оплата на платежной странице процессинга

@@ -1,6 +1,6 @@
 ---
 id: dictionary
-title: dictionary
+title: Dictionary
 ---
 
 ## Directory. Payment Statuses

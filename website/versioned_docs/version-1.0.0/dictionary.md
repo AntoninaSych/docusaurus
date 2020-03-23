@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-dictionary
-title: dictionary
+title: Dictionary
 original_id: dictionary
 ---
 

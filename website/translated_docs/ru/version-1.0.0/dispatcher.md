@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-dispatcher
-title: Specification for the interaction of the merchant with the Dispatcher ver 1.1 software.
+title: Specification for the interaction of the merchant with the Dispatcher software.
 original_id: dispatcher
 ---
 

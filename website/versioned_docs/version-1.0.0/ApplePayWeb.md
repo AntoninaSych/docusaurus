@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-ApplePayWeb
-title: ApplePayWeb
+title: Web
 original_id: ApplePayWeb
 ---
 
