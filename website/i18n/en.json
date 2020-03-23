@@ -15,22 +15,22 @@
         "title": "dictionary"
       },
       "dispatcher": {
-        "title": "Specification for the interaction of the merchant with the Dispatcher ver 1.1 software."
+        "title": "Specification for the interaction of the merchant with the Dispatcher software."
       },
       "GooglePay": {
         "title": "GooglePay"
       },
-      "version-1.0.0/version-1.0.0-ApplePayApp": {
-        "title": "ApplePayApp"
+      "version-1.0.0-ApplePayApp": {
+        "title": "App"
       },
-      "version-1.0.0/version-1.0.0-ApplePayWeb": {
-        "title": "ApplePayWeb"
+      "version-1.0.0-ApplePayWeb": {
+        "title": "yWeb"
       },
-      "version-1.0.0/version-1.0.0-dictionary": {
-        "title": "dictionary"
+      "version-1.0.0-dictionary": {
+        "title": "Dictionary"
       },
-      "version-1.0.0/version-1.0.0-dispatcher": {
-        "title": "Specification for the interaction of the merchant with the Dispatcher ver 1.1 software."
+      "version-1.0.0-dispatcher": {
+        "title": "Specification for the interaction of the merchant with the Dispatcher software."
       },
       "version-1.0.0/version-1.0.0-GooglePay": {
         "title": "GooglePay"

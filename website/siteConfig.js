@@ -47,7 +47,7 @@ const siteConfig = {
     }
    // {page: 'documents', label: 'Documents'}
     // {page: 'ua', label: 'UK'},
-    // {page: 'help', label: 'Help'},
+    //  {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
 
